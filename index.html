@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Updated Fakhurddin J.</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0A2463", secondary: "#3E92CC" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="Styles/main.css">
+    <link rel="stylesheet" href="Styles/home.css">
+    <link rel="stylesheet" href="Styles/navigation.css">
+    <link rel="stylesheet" href="Styles/service.css">
+    <link rel="stylesheet" href="Styles/project.css">
+    <link rel="stylesheet" href="Styles/contact.css">
+  </head>
+  <body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 transition-all duration-300"
+    >
+      <div class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+          <a
+            href="#home"
+            class="text-primary font-bold text-2xl font-['Poppins']"
+            >Fakhurddin J.</a
+          >
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-primary transition-colors font-medium"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-700 hover:text-primary transition-colors font-medium"
+              >About</a
+            >
+            <a
+              href="#services"
+              class="text-gray-700 hover:text-primary transition-colors font-medium"
+              >Services</a
+            >
+            <a
+              href="#projects"
+              class="text-gray-700 hover:text-primary transition-colors font-medium"
+              >Projects</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-primary transition-colors font-medium"
+              >Contact</a
+            >
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              id="menu-toggle"
+              type="button"
+              class="w-10 h-10 flex items-center justify-center text-gray-700"
+              aria-label="Toggle menu"
+              >
+              <i class="ri-menu-line ri-lg pointer-events-none"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-4 py-3 space-y-3 bg-white shadow-md">
+          <a
+            href="#home"
+            class="block text-gray-700 hover:text-primary transition-colors font-medium"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block text-gray-700 hover:text-primary transition-colors font-medium"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="block text-gray-700 hover:text-primary transition-colors font-medium"
+            >Services</a
+          >
+          <a
+            href="#projects"
+            class="block text-gray-700 hover:text-primary transition-colors font-medium"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="block text-gray-700 hover:text-primary transition-colors font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen w-full relative overflow-hidden bg-white">
+  <!-- Background with subtle pattern -->
+  <div class="absolute inset-0" aria-hidden="true"
+    style="background-image: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.9)), url('Images/backGround.png'); 
+           background-size: cover; 
+           background-position: center; 
+           ">
+  </div>
+  
+  <!-- Content container -->
+  <div class="container mx-auto px-4 sm:px-6 min-h-[90vh] flex items-center"> <!-- Changed from screen -->
+    <div class="max-w-4xl mx-auto text-center z-10 w-full py-16">
+      <!-- Badge -->
+      <div class="inline-flex items-center bg-blue-50 rounded-full px-4 py-2 mb-6 sm:mb-8">
+        <div class="w-2 h-2 rounded-full bg-primary mr-2"></div>
+        <span class="text-primary font-medium text-sm sm:text-base">Data Analytics Professional</span>
+      </div>
+      
+      <!-- Main heading -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+        Delivering Data-Driven <span class="text-primary">Solutions</span>
+      </h1>
+      
+      <!-- Subheading -->
+      <p class="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 leading-relaxed max-w-2xl mx-auto px-4">
+        Helping businesses optimize performance through advanced analytics and data-driven strategies.
+      </p>
+      
+      <!-- Stats grid -->
+      <div class="grid grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-3xl mx-auto px-2">
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">50+</div>
+          <div class="text-xs sm:text-sm text-gray-600">Projects Delivered</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">97%</div>
+          <div class="text-xs sm:text-sm text-gray-600">Client Satisfaction</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">38+</div>
+          <div class="text-xs sm:text-sm text-gray-600">Happy Clients</div>
+        </div>
+      </div>
+      
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
+        <a href="#projects" class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors whitespace-nowrap text-sm sm:text-base">
+          <i class="ri-eye-line ri-lg mr-2"></i>
+          View Projects
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors whitespace-nowrap text-sm sm:text-base">
+          <i class="ri-mail-line ri-lg mr-2"></i>
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- About Section -->
+    <section id="about" class="py-20 min-h-screen flex items-center">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/3 flex justify-center">
+            <div class="w-[320px] h-[320px] rounded-full overflow-hidden shadow-xl">
+                <!--Personal Picture-->
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20young%20Asian%20male%20data%20scientist%20with%20glasses%2C%20clean%20background%2C%20professional%20attire%2C%20confident%20expression%2C%20high%20quality%20portrait%2C%20soft%20lighting&width=500&height=500&seq=headshot&orientation=squarish"
+                alt="Fakhurddin J."
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <div class="flex justify-between items-center mb-6">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-gray-800 font-['Poppins']"
+              >
+                About Me
+              </h2>
+            </div>
+            <p class="text-gray-700 mb-8 leading-relaxed">
+              I'm a results-focused data analyst with 3+ years of experience
+              turning data into clear, useful insights. I create interactive
+              dashboards using Excel, Power BI, and Google Sheets to help
+              businesses make smarter decisions. I'm also diving into Data
+              Science, working with Python and machine learning to uncover
+              deeper insights. Whether it's HR, marketing, or operations, I turn
+              numbers into stories that drive action and growth.
+            </p>
+            <div class="mb-8">
+              <h3
+                class="text-xl font-semibold text-gray-800 mb-4 font-['Poppins']"
+              >
+                Skills
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-tag px-3 py-1 bg-blue-100 text-primary rounded-full text-sm"
+                  >SQL</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-blue-100 text-primary rounded-full text-sm"
+                  >Excel</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-blue-100 text-primary rounded-full text-sm"
+                  >Power BI</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-blue-100 text-primary rounded-full text-sm"
+                  >Data Modeling</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-blue-100 text-primary rounded-full text-sm"
+                  >ETL</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-blue-100 text-primary rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-blue-100 text-primary rounded-full text-sm"
+                  >Machine Learning</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-blue-100 text-primary rounded-full text-sm"
+                  >Google Sheets</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-3 md:gap-4">
+              <a
+                href="https://www.linkedin.com/home"
+                class="inline-flex items-center justify-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors w-full md:w-auto"
+                >
+                <i class="ri-linkedin-fill ri-lg mr-2"></i>
+                Linkedin
+              </a>
+              <a
+                href="https://github.com/"
+                class="inline-flex items-center justify-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors w-full md:w-auto"
+                >
+                <i class="ri-github-fill ri-lg mr-2"></i>
+                GitHub
+              </a>
+              <a
+                href="Images/backGround.png"
+                download="backGround.png"
+                class="inline-flex items-center justify-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors w-full md:w-auto"
+                >
+                <i class="ri-file-download-line ri-lg mr-2"></i>
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Services Section -->
+<section id="services" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 font-['Poppins']">
+      Services
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Service 1: Business Intelligence -->
+      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 font-['Poppins']">Business Intelligence</h3>
+            <div class="flex space-x-2">
+              <div class="w-8 h-8 flex items-center justify-center text-secondary">
+                <i class="ri-line-chart-line ri-lg"></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center text-secondary">
+                <i class="ri-funds-box-line ri-lg"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Transform your business data into strategic insights and actionable recommendations.
+          </p>
+          <button class="service-toggle w-full flex items-center justify-between text-primary font-medium">
+            <span>Learn More</span>
+            <i class="ri-arrow-down-s-line ri-lg toggle-icon"></i>
+          </button>
+          <div class="service-content pt-4">
+            <p class="text-gray-600 mb-4">
+              I help businesses make data-driven decisions through comprehensive analysis and reporting.
+              My solutions include KPI tracking, performance analytics, and strategic recommendations that drive business growth and efficiency.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="text-sm font-semibold text-gray-700 mb-4 font-['Poppins']">Workflow</h4>
+              <div class="flex items-center justify-between">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-file-list-3-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Requirements</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-layout-2-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Design</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-code-s-slash-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Implement</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-speed-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Optimize</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex-1 flex justify-end mr-6">
+                <a
+                  href= "#contact"
+                    class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-colors"
+                    >
+                    Request Service
+                </a>
+            </div>
+        </div>
+      </div>
+
+      <!-- Service 2: Data Visualization -->
+      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 font-['Poppins']">Data Visualization</h3>
+            <div class="flex space-x-2">
+              <div class="w-8 h-8 flex items-center justify-center text-secondary">
+                <i class="ri-bar-chart-box-line ri-lg"></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center text-secondary">
+                <i class="ri-pie-chart-line ri-lg"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Transform your raw data into compelling visual stories that drive decision-making.
+          </p>
+          <button class="service-toggle w-full flex items-center justify-between text-primary font-medium">
+            <span>Learn More</span>
+            <i class="ri-arrow-down-s-line ri-lg toggle-icon"></i>
+          </button>
+          <div class="service-content pt-4">
+            <p class="text-gray-600 mb-4">
+              I create interactive dashboards and reports using Tableau and Power BI that reveal patterns and insights hidden in your data.
+              My approach focuses on clarity, accessibility, and actionable intelligence.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="text-sm font-semibold text-gray-700 mb-4 font-['Poppins']">Workflow</h4>
+              <div class="flex items-center justify-between">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-database-2-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Data</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-filter-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Process</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-bar-chart-grouped-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Visualize</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-lightbulb-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Insights</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex-1 flex justify-end mr-6">
+                <a
+                  href= "#contact"
+                    class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-colors"
+                    >
+                    Request Service
+                </a>
+            </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Predictive Modeling -->
+      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 font-['Poppins']">Predictive Modeling</h3>
+            <div class="flex space-x-2">
+              <div class="w-8 h-8 flex items-center justify-center text-secondary">
+                <i class="ri-braces-line ri-lg"></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center text-secondary">
+                <i class="ri-function-line ri-lg"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Leverage machine learning to forecast trends and make data-driven predictions.
+          </p>
+          <button class="service-toggle w-full flex items-center justify-between text-primary font-medium">
+            <span>Learn More</span>
+            <i class="ri-arrow-down-s-line ri-lg toggle-icon"></i>
+          </button>
+          <div class="service-content pt-4">
+            <p class="text-gray-600 mb-4">
+              I develop custom predictive models using Python and R that help you anticipate market changes, customer behavior, and business outcomes.
+              My solutions range from regression analysis to complex neural networks, always tailored to your specific needs.
+            </p>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="text-sm font-semibold text-gray-700 mb-4 font-['Poppins']">Workflow</h4>
+              <div class="flex items-center justify-between">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-file-list-3-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Define</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-database-2-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Collect</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-code-box-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Model</span>
+                </div>
+                <div class="w-6 h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-1">
+                    <i class="ri-rocket-line ri-lg"></i>
+                  </div>
+                  <span class="text-xs text-gray-600">Deploy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex-1 flex justify-end mr-6">
+                <a
+                  href= "#contact"
+                    class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-colors"
+                    >
+                    Request Service
+                </a>
+            </div>
+        </div>
+      </div>
+</section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 font-['Poppins']"
+        >
+          Projects
+        </h2>
+        <div class="flex justify-center mb-8">
+          <div class="inline-flex bg-gray-100 rounded-full p-1">
+            <a
+              class="project-filter px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
+              data-filter="all"
+            >
+              All
+            </a>
+            <a
+              class="project-filter px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
+              data-filter="dashboards"
+            >
+              Dashboards
+            </a>
+            <a
+              class="project-filter px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
+              data-filter="models"
+            >
+              Models
+            </a>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
+            data-category="dashboards"
+          >
+            <div class="relative h-48">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%20data%20visualization%20dashboard%20with%20charts%2C%20graphs%2C%20and%20KPIs%2C%20clean%20design%2C%20blue%20color%20scheme%2C%20business%20analytics%20interface%2C%20high%20quality%20screenshot&width=600&height=400&seq=project1&orientation=landscape"
+                alt="Retail Analytics Dashboard"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-2 font-['Poppins']"
+              >
+                Retail Analytics Dashboard
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Developed an interactive Tableau dashboard for a national retail
+                chain that increased sales visibility and improved inventory
+                management decisions.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Tableau</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >SQL</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >ETL</span
+                >
+              </div>
+              <div class="project-kpi bg-gray-50 p-3 rounded-lg mb-4 mobile-hidden">
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-600">Reduced reporting time</span>
+                  <span class="font-semibold text-primary">68%</span>
+                </div>
+                <div class="flex justify-between text-sm mt-2">
+                  <span class="text-gray-600">Inventory accuracy</span>
+                  <span class="font-semibold text-primary">+12%</span>
+                </div>
+              </div>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-gray-100 text-gray-700 rounded-button hover:bg-gray-200 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-github-line ri-lg mr-1"></i>
+                  GitHub
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm whitespace-nowrap"
+                >
+                  
+                  View Live
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
+            data-category="models"
+          >
+            <div class="relative h-48">
+              <img
+                src="https://readdy.ai/api/search-image?query=predictive%20modeling%20visualization%20with%20machine%20learning%20algorithms%2C%20Python%20code%20snippets%20visible%2C%20data%20science%20project%2C%20professional%20and%20technical%2C%20showing%20model%20performance%20metrics&width=600&height=400&seq=project2&orientation=landscape"
+                alt="Customer Churn Predictor"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-2 font-['Poppins']"
+              >
+                Customer Churn Predictor
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Built a machine learning model using Python and scikit-learn
+                that predicts customer churn with 87% accuracy for a
+                subscription-based SaaS company.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Python</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >scikit-learn</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Pandas</span
+                >
+              </div>
+              <div class="project-kpi bg-gray-50 p-3 rounded-lg mb-4">
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-600">Model accuracy</span>
+                  <span class="font-semibold text-primary">87%</span>
+                </div>
+                <div class="flex justify-between text-sm mt-2">
+                  <span class="text-gray-600">Retention improvement</span>
+                  <span class="font-semibold text-primary">+23%</span>
+                </div>
+              </div>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-gray-100 text-gray-700 rounded-button hover:bg-gray-200 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-github-line ri-lg mr-1"></i>
+                  GitHub
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-external-link-line ri-lg mr-1"></i>
+                  View Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
+            data-category="dashboards"
+          >
+            <div class="relative h-48">
+              <img
+                src="https://readdy.ai/api/search-image?query=financial%20dashboard%20with%20stock%20market%20data%20visualization%2C%20investment%20performance%20metrics%2C%20clean%20modern%20interface%20with%20charts%20and%20KPIs%2C%20professional%20finance%20application&width=600&height=400&seq=project3&orientation=landscape"
+                alt="Investment Portfolio Tracker"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-2 font-['Poppins']"
+              >
+                Investment Portfolio Tracker
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Created a Power BI dashboard for wealth management firm that
+                provides real-time portfolio performance tracking and risk
+                assessment.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Power BI</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >DAX</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Financial API</span
+                >
+              </div>
+              <div class="project-kpi bg-gray-50 p-3 rounded-lg mb-4">
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-600">Client satisfaction</span>
+                  <span class="font-semibold text-primary">+35%</span>
+                </div>
+                <div class="flex justify-between text-sm mt-2">
+                  <span class="text-gray-600">Data processing time</span>
+                  <span class="font-semibold text-primary">-78%</span>
+                </div>
+              </div>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-gray-100 text-gray-700 rounded-button hover:bg-gray-200 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-github-line ri-lg mr-1"></i>
+                  GitHub
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-external-link-line ri-lg mr-1"></i>
+                  View Live
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
+            data-category="models"
+          >
+            <div class="relative h-48">
+              <img
+                src="https://readdy.ai/api/search-image?query=healthcare%20data%20analysis%20visualization%20with%20patient%20metrics%2C%20medical%20data%20patterns%2C%20professional%20clinical%20dashboard%20with%20privacy-compliant%20interface%2C%20showing%20health%20trends&width=600&height=400&seq=project4&orientation=landscape"
+                alt="Patient Outcome Predictor"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-2 font-['Poppins']"
+              >
+                Patient Outcome Predictor
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Developed a machine learning model for a healthcare provider
+                that predicts patient readmission risk with 82% accuracy using
+                historical medical data.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Python</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >TensorFlow</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Healthcare API</span
+                >
+              </div>
+              <div class="project-kpi bg-gray-50 p-3 rounded-lg mb-4">
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-600">Prediction accuracy</span>
+                  <span class="font-semibold text-primary">82%</span>
+                </div>
+                <div class="flex justify-between text-sm mt-2">
+                  <span class="text-gray-600">Readmission reduction</span>
+                  <span class="font-semibold text-primary">-18%</span>
+                </div>
+              </div>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-gray-100 text-gray-700 rounded-button hover:bg-gray-200 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-github-line ri-lg mr-1"></i>
+                  GitHub
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-external-link-line ri-lg mr-1"></i>
+                  View Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
+            data-category="dashboards"
+          >
+            <div class="relative h-48">
+              <img
+                src="https://readdy.ai/api/search-image?query=e-commerce%20analytics%20dashboard%20with%20sales%20metrics%2C%20customer%20behavior%20data%2C%20product%20performance%20charts%2C%20professional%20business%20intelligence%20interface%20with%20clean%20design&width=600&height=400&seq=project5&orientation=landscape"
+                alt="E-Commerce Analytics Suite"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-2 font-['Poppins']"
+              >
+                E-Commerce Analytics Suite
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Built a comprehensive Tableau dashboard suite for an online
+                retailer that tracks sales, customer behavior, and marketing
+                campaign performance.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Tableau</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >SQL</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Google Analytics</span
+                >
+              </div>
+              <div class="project-kpi bg-gray-50 p-3 rounded-lg mb-4">
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-600">Conversion rate</span>
+                  <span class="font-semibold text-primary">+15%</span>
+                </div>
+                <div class="flex justify-between text-sm mt-2">
+                  <span class="text-gray-600">Marketing ROI</span>
+                  <span class="font-semibold text-primary">+42%</span>
+                </div>
+              </div>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-gray-100 text-gray-700 rounded-button hover:bg-gray-200 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-github-line ri-lg mr-1"></i>
+                  GitHub
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-external-link-line ri-lg mr-1"></i>
+                  View Live
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 6 -->
+          <div
+            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
+            data-category="models"
+          >
+            <div class="relative h-48">
+              <img
+                src="https://readdy.ai/api/search-image?query=supply%20chain%20optimization%20model%20visualization%20with%20logistics%20network%2C%20inventory%20management%20metrics%2C%20transportation%20routes%2C%20professional%20operations%20research%20interface&width=600&height=400&seq=project6&orientation=landscape"
+                alt="Supply Chain Optimizer"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-2 font-['Poppins']"
+              >
+                Supply Chain Optimizer
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Created a Python-based optimization model that reduced logistics
+                costs by 22% for a manufacturing company by improving inventory
+                management and distribution routes.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Python</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >OR-Tools</span
+                >
+                <span class="px-2 py-1 bg-blue-100 text-primary rounded text-xs"
+                  >Gurobi</span
+                >
+              </div>
+              <div class="project-kpi bg-gray-50 p-3 rounded-lg mb-4">
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-600">Cost reduction</span>
+                  <span class="font-semibold text-primary">22%</span>
+                </div>
+                <div class="flex justify-between text-sm mt-2">
+                  <span class="text-gray-600">Delivery time</span>
+                  <span class="font-semibold text-primary">-35%</span>
+                </div>
+              </div>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-gray-100 text-gray-700 rounded-button hover:bg-gray-200 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-github-line ri-lg mr-1"></i>
+                  GitHub
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-1.5 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm whitespace-nowrap"
+                >
+                  <i class="ri-external-link-line ri-lg mr-1"></i>
+                  View Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 font-['Poppins']"
+        >
+          Contact
+        </h2>
+        <div class="flex flex-col md:flex-row gap-10">
+          <div class="md:w-1/2">
+            <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md">
+              <input type="hidden" name="access_key" value="1e8d486d-2b64-4c6b-8b37-dcbbda2f9ccf">
+              <input type="hidden" name="subject" value="New Contact from Website">
+              <input type="hidden" name="redirect" value="#contact">
+              <div class="mb-6">
+                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-3 rounded border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-gray-700 text-sm"
+                  placeholder="Your name"
+                  />
+                  <p class="text-red-500 text-sm mt-1 hidden" id="nameError">Please fill in this field.</p>
+              </div>
+              <div class="mb-6">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-3 rounded border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-gray-700 text-sm"
+                  placeholder="Your email"
+                  />
+                  <p class="text-red-500 text-sm mt-1 hidden" id="emailError">Please fill in this field.</p>
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="w-full px-4 py-3 rounded border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-gray-700 text-sm"
+                  placeholder="Your message"
+                  >
+                </textarea>
+                <p class="text-red-500 text-sm mt-1 hidden" id="messageError">Your message is not visible.</p>
+              </div>
+              <button type="submit" class="w-full px-4 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors font-medium inline-flex items-center justify-center">
+                <i class="ri-send-plane-line ri-lg mr-2"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div class="md:w-1/2">
+            <div class="bg-white p-8 rounded-lg shadow-md h-full">
+              <div class="flex items-start mb-8">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                >
+                  <i class="ri-time-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3
+                    class="text-lg font-semibold text-gray-800 mb-1 font-['Poppins']"
+                  >
+                    Availability
+                  </h3>
+                  <p class="text-gray-600">Available for new projects</p>
+                  <p class="text-gray-600 mt-1">Response within 24 hours</p>
+                </div>
+              </div>
+              <div class="flex items-start mb-8">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                >
+                  <i class="ri-mail-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3
+                    class="text-lg font-semibold text-gray-800 mb-1 font-['Poppins']"
+                  >
+                    Email
+                  </h3>
+                  <p class="text-gray-600">fakhurjunejo12@gmail.com</p>
+                </div>
+              </div>
+              <div class="mb-8">
+                <h3
+                  class="text-lg font-semibold text-gray-800 mb-4 font-['Poppins']"
+                >
+                  Connect
+                </h3>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="ri-linkedin-fill ri-lg"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="ri-github-fill ri-lg"></i>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-semibold text-gray-800 mb-4 font-['Poppins']"
+                >
+                  Schedule a Call
+                </h3>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <p class="text-gray-600 mb-4">
+                    Book a 30-minute consultation to discuss your data needs.
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                  >
+                    <i class="ri-calendar-line ri-lg mr-2"></i>
+                    Schedule on Calendly
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <h2 class="text-2xl font-bold mb-2 font-['Poppins']">
+              Fakhurddin J.
+            </h2>
+            <p class="text-gray-400">Analytics Specialist & Data Scientist</p>
+          </div>
+          <div
+            class="flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0"
+          >
+            <div>
+              <h3 class="text-lg font-semibold mb-3 font-['Poppins']">
+                Quick Links
+              </h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#home"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Projects</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-3 font-['Poppins']">
+                Contact
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <i class="ri-mail-line ri-lg mr-2"></i>
+                  <span>fakhurjunejo12@gmail.com</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-map-pin-line ri-lg mr-2"></i>
+                  <span>Based in Pakistan, Working Globally</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 Fakhurddin J. All rights reserved.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="ri-linkedin-fill ri-lg"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="ri-github-fill ri-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="Scripts/navigation.js"></script>
+    <script src="Scripts/contact.js"></script>
+    <script src="Scripts/button.js"></script>
+    <script src="Scripts/project.js"></script>
+    <script src="Scripts/service.js"></script>
+    <script src="Scripts/scroll.js"></script>
+  </body>
+</html>
