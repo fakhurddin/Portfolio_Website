@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a i[class*="ri-linkedin-fill"]').forEach(icon => {
     icon.closest('a').addEventListener('click', function (e) {
       e.preventDefault();
-      window.open('https://linkedin.com/in/yourprofile', '_blank');
+      window.open('https://www.linkedin.com/in/fakhurddin-junejo-65a127386', '_blank');
     });
   });
 
