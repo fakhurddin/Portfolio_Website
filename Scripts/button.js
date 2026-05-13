@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (calendlyBtn) {
     calendlyBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      window.open('https://calendly.com/your-calendly-link', '_blank');
+      window.open('https://calendly.com/fakhurjunejo12/portfolio-consultation', '_blank');
     });
   }
 });
