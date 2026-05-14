@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   // ========== Button Functionalities ==========
-
+*/
   // Download Resume Button
   /*const downloadResumeBtn = document.querySelector('a[download="My Resume.docx"]');
   if (downloadResumeBtn) {
