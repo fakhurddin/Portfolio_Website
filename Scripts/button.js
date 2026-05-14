@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Social Links
-  document.querySelectorAll('a i[class*="ri-linkedin-fill"]').forEach(icon => {
+  /*document.querySelectorAll('a i[class*="ri-linkedin-fill"]').forEach(icon => {
     icon.closest('a').addEventListener('click', function (e) {
       e.preventDefault();
       window.open('https://www.linkedin.com/in/fakhurddin-junejo-65a127386', '_blank');
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       window.open('https://github.com/Fakhurddin', '_blank');
     });
-  });
+  });*/
 
   // Schedule on Calendly Button
   /*const calendlyBtn = document.querySelector('a i[class*="ri-calendar-line"]')?.closest('a');
