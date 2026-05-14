@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Schedule on Calendly Button
-  const calendlyBtn = document.querySelector('a i[class*="ri-calendar-line"]')?.closest('a');
+  /*const calendlyBtn = document.querySelector('a i[class*="ri-calendar-line"]')?.closest('a');
   if (calendlyBtn) {
     calendlyBtn.addEventListener('click', function (e) {
       e.preventDefault();
       window.open('https://calendly.com/fakhurjunejo12/portfolio-consultation', '_blank');
     });
   }
-});
+});*/
