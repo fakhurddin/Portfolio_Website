@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // ========== Button Functionalities ==========
 
   // Download Resume Button
-  const downloadResumeBtn = document.querySelector('a[download="My Resume.docx"]');
+  /*const downloadResumeBtn = document.querySelector('a[download="My Resume.docx"]');
   if (downloadResumeBtn) {
     downloadResumeBtn.addEventListener('click', function (e) {
       e.preventDefault();
       // In a real implementation, this would trigger the actual download
       console.log("Resume download initiated");
     });
-  }
+  }*/
 
   // Project Links (GitHub and View Live/Demo)
   document.querySelectorAll('.project-card a').forEach(link => {
