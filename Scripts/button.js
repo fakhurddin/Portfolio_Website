@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }*/
 
   // Project Links (GitHub and View Live/Demo)
-  document.querySelectorAll('.project-card a').forEach(link => {
+  /*document.querySelectorAll('.project-card a').forEach(link => {
     link.addEventListener('click', function (e) {
       if (this.querySelector('i[class*="ri-github-line"]')) {
         e.preventDefault();
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open('https://www.loom.com/', '_blank');
       }
     });
-  });
+  });*/
 
   // Social Links
   /*document.querySelectorAll('a i[class*="ri-linkedin-fill"]').forEach(icon => {
