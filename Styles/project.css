@@ -2,12 +2,34 @@
    PROJECT CARD
    ==================== */
 .project-card {
-  transition: transform 250ms ease, box-shadow 250ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
   cursor: default;
   will-change: transform;
 }
 
-/* Hidden state kept for any residual JS calls — harmless no-op */
+/* KPI hidden by default */
+.project-row__kpi {
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
+}
+
+/* Show on hover (desktop) */
+.project-card:hover .project-row__kpi {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Show on tap (mobile — toggled via JS) */
+.project-card.is-active .project-row__kpi {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Hidden state — harmless no-op */
 .project-card.is-hidden {
   display: none;
 }

@@ -1,13 +1,13 @@
 :root {
-  --bg:            #F2F1EE;
-  --surface:       #FFFFFF;
-  --text:          #1A1A1A;
-  --text-muted:    #6B6B6B;
-  --accent:        #2563EB;
-  --accent-subtle: #EFF6FF;
-  --border:        #E0DED9;
-  --success:       #16A34A;
-  --error:         #DC2626;
+  --bg:            #1C1917;
+  --surface:       #26201D;
+  --text:          #EDE8E3;
+  --text-muted:    #9C8E87;
+  --accent:        #60A5FA;
+  --accent-subtle: #172032;
+  --border:        #3C3330;
+  --success:       #6BAF84;
+  --error:         #E06C6C;
 }
 
 /* ==============================
@@ -21,8 +21,8 @@ body::before {
   z-index: 9999;
   background: radial-gradient(
     500px circle at var(--cursor-x, -9999px) var(--cursor-y, -9999px),
-    rgba(37, 99, 235, 0.08) 0%,
-    rgba(37, 99, 235, 0.04) 40%,
+    rgba(96, 165, 250, 0.07) 0%,
+    rgba(96, 165, 250, 0.03) 40%,
     transparent 70%
   );
   transition: background 0.08s ease;
@@ -70,7 +70,7 @@ a {
 }
 
 a:hover {
-  color: #1D4ED8;
+  color: #93C5FD;
 }
 
 img {
@@ -125,7 +125,7 @@ img {
 .lp-title {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--accent);
   margin-bottom: 1.25rem;
   letter-spacing: 0.01em;
 }
@@ -228,7 +228,7 @@ img {
 .rp-footer .footer-sub {
   font-size: 0.75rem;
   color: var(--text-muted);
-  opacity: 0.75;
+  opacity: 0.6;
   margin: 0;
 }
 
@@ -270,22 +270,22 @@ img {
 }
 
 .btn--primary:hover {
-  background-color: #1D4ED8;
-  border-color: #1D4ED8;
+  background-color: #3B82F6;
+  border-color: #3B82F6;
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 14px -2px rgba(96, 165, 250, 0.45);
 }
 
 .btn--secondary {
   background-color: transparent;
-  color: var(--text);
+  color: var(--text-muted);
   border-color: var(--border);
 }
 
 .btn--secondary:hover {
-  background-color: var(--bg);
-  border-color: var(--text-muted);
+  background-color: var(--accent-subtle);
+  border-color: var(--accent);
   color: var(--text);
   transform: translateY(-1px);
 }
@@ -330,12 +330,52 @@ img {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  transition: transform 250ms ease, box-shadow 250ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px -4px rgba(96, 165, 250, 0.18);
+}
+
+/* ==============================
+   ABOUT — CSS grid layout
+   ============================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 2rem;
+}
+
+.about-photo {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.about-bio {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.about-skills {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 0.875rem;
+}
+
+/* Mobile: skills span full width below image + bio */
+@media (max-width: 639px) {
+  .about-photo {
+    grid-row: 1;
+  }
+
+  .about-skills {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    margin-top: 0.75rem;
+  }
 }
 
 /* ==============================

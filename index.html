@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Fakhurddin Junejo — Data Science & Analytics. Dashboards, predictive models, and data pipelines that turn raw data into clear decisions." />
-    <title>Fakhurddin Junejo | Data Science & Analytics</title>
+      <title>Fakhurddin Junejo | Data Science & Analytics</title>
     <link rel="icon" type="image/png" href="Images/Favicon.png">
 
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
@@ -13,11 +13,12 @@
         theme: {
           extend: {
             colors: {
-              primary:  "#2563EB",
-              surface:  "#FFFFFF",
-              bg:       "#F2F1EE",
-              muted:    "#6B6B6B",
-              border:   "#E0DED9",
+              primary:  "#60A5FA",
+              surface:  "#26201D",
+              bg:       "#1C1917",
+              muted:    "#9C8E87",
+              border:   "#3C3330",
+              accent:   "#60A5FA",
             },
             borderRadius: {
               none:    "0px",
@@ -79,15 +80,9 @@
         </nav>
 
         <div class="lp-social">
-          <a href="https://www.linkedin.com/in/fakhurddin-junejo-65a127386/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" aria-label="LinkedIn">
-            <i class="ri-linkedin-fill ri-lg" aria-hidden="true"></i>
-          </a>
-          <a href="https://github.com/fakhurddin" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" aria-label="GitHub">
-            <i class="ri-github-fill ri-lg" aria-hidden="true"></i>
-          </a>
-          <a href="Images/Resume.pdf" download="Fakhurddin_Resume.pdf" class="btn btn--secondary btn--sm">
-            <i class="ri-file-download-line" aria-hidden="true"></i> Resume
-          </a>
+          <a href="https://www.linkedin.com/in/fakhurddin-junejo-65a127386/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm">LinkedIn</a>
+          <a href="https://github.com/fakhurddin" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm">GitHub</a>
+          <a href="Images/Resume.pdf" download="Fakhurddin_Resume.pdf" class="btn btn--secondary btn--sm">Resume</a>
         </div>
 
       </aside>
@@ -98,23 +93,26 @@
         <!-- ABOUT -->
         <section id="about" class="rp-section" aria-label="About">
           <h2>About</h2>
-          <div class="flex gap-8 items-start">
-            <div class="flex-shrink-0">
-              <div class="overflow-hidden rounded-xl border border-[#E0DED9]" style="width: 7.5rem; height: 10.5rem;">
+          <div class="about-grid">
+            <div class="about-photo">
+              <div class="overflow-hidden rounded-xl border border-[#3C3330]" style="width: 8rem; height: 10rem;">
                 <img
                   src="Images/Profile.jpg"
                   alt="Fakhurddin Junejo"
-                  style="display: block; width: 155%; margin-left: -27.5%;"
+                  class="w-full h-full object-cover"
                 />
               </div>
             </div>
-            <div>
-              <p class="text-[#6B6B6B] mb-4 leading-relaxed text-sm">
-                Final-year Computer Science student and aspiring Data Scientist. I build analytics
-                pipelines, dashboards, and ML models that translate messy datasets into clear decisions —
-                using SQL, Python, Power BI, and Tableau.
+            <div class="about-bio">
+              <p class="text-[#9C8E87] leading-relaxed text-sm">
+                Final-year Computer Science student specializing in Data Science &amp; Analytics.
+                I build predictive models, BI dashboards, and data pipelines that turn messy data
+                into clear, measurable business outcomes.
               </p>
-              <div class="flex flex-wrap gap-2 mb-5">
+            </div>
+            <div class="about-skills">
+              <p class="text-[#9C8E87] text-xs font-semibold uppercase tracking-widest mb-2">Skills</p>
+              <div class="flex flex-wrap gap-2">
                 <span class="tag">SQL</span>
                 <span class="tag">Power BI</span>
                 <span class="tag">Python</span>
@@ -124,16 +122,6 @@
                 <span class="tag">Pandas</span>
                 <span class="tag">Data Visualization</span>
                 <span class="tag">Machine Learning</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <a href="https://www.linkedin.com/in/fakhurddin-junejo-65a127386/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
-                  <i class="ri-linkedin-fill" aria-hidden="true"></i>
-                  LinkedIn
-                </a>
-                <a href="https://github.com/fakhurddin" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm">
-                  <i class="ri-github-fill" aria-hidden="true"></i>
-                  GitHub
-                </a>
               </div>
             </div>
           </div>
@@ -334,36 +322,36 @@
 
             <div class="card p-5">
               <div class="flex items-center gap-3 mb-3">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#EFF6FF] rounded-full text-[#2563EB] flex-shrink-0">
+                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] flex-shrink-0">
                   <i class="ri-line-chart-line ri-lg" aria-hidden="true"></i>
                 </div>
-                <h3 class="text-base font-semibold text-[#1A1A1A] m-0">Business Intelligence</h3>
+                <h3 class="text-base font-semibold text-[#EDE8E3] m-0">Business Intelligence</h3>
               </div>
-              <p class="text-[#6B6B6B] text-sm leading-relaxed m-0">
+              <p class="text-[#9C8E87] text-sm leading-relaxed m-0">
                 KPI tracking, performance analytics, and reporting systems that surface strategic decisions from operational data.
               </p>
             </div>
 
             <div class="card p-5">
               <div class="flex items-center gap-3 mb-3">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#EFF6FF] rounded-full text-[#2563EB] flex-shrink-0">
+                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] flex-shrink-0">
                   <i class="ri-bar-chart-box-line ri-lg" aria-hidden="true"></i>
                 </div>
-                <h3 class="text-base font-semibold text-[#1A1A1A] m-0">Data Visualization</h3>
+                <h3 class="text-base font-semibold text-[#EDE8E3] m-0">Data Visualization</h3>
               </div>
-              <p class="text-[#6B6B6B] text-sm leading-relaxed m-0">
+              <p class="text-[#9C8E87] text-sm leading-relaxed m-0">
                 Interactive Tableau and Power BI dashboards that reveal patterns hidden in your data and drive clear action.
               </p>
             </div>
 
             <div class="card p-5">
               <div class="flex items-center gap-3 mb-3">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#EFF6FF] rounded-full text-[#2563EB] flex-shrink-0">
+                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] flex-shrink-0">
                   <i class="ri-braces-line ri-lg" aria-hidden="true"></i>
                 </div>
-                <h3 class="text-base font-semibold text-[#1A1A1A] m-0">Predictive Modeling</h3>
+                <h3 class="text-base font-semibold text-[#EDE8E3] m-0">Predictive Modeling</h3>
               </div>
-              <p class="text-[#6B6B6B] text-sm leading-relaxed m-0">
+              <p class="text-[#9C8E87] text-sm leading-relaxed m-0">
                 Custom ML models in Python — from regression analysis to ensemble methods — tuned to your specific business problem.
               </p>
             </div>
@@ -383,21 +371,21 @@
                 <input type="hidden" name="redirect" value="#contact">
 
                 <div class="mb-4">
-                  <label for="name" class="block text-[#1A1A1A] font-medium mb-2 text-sm">Name</label>
+                  <label for="name" class="block text-[#EDE8E3] font-medium mb-2 text-sm">Name</label>
                   <input type="text" id="name" name="name" placeholder="Your name" />
-                  <p class="text-[#DC2626] text-sm mt-1 hidden" id="nameError">Please fill in this field.</p>
+                  <p class="text-[#E06C6C] text-sm mt-1 hidden" id="nameError">Please fill in this field.</p>
                 </div>
 
                 <div class="mb-4">
-                  <label for="email" class="block text-[#1A1A1A] font-medium mb-2 text-sm">Email</label>
+                  <label for="email" class="block text-[#EDE8E3] font-medium mb-2 text-sm">Email</label>
                   <input type="email" id="email" name="email" placeholder="Your email" />
-                  <p class="text-[#DC2626] text-sm mt-1 hidden" id="emailError">Please enter a valid email.</p>
+                  <p class="text-[#E06C6C] text-sm mt-1 hidden" id="emailError">Please enter a valid email.</p>
                 </div>
 
                 <div class="mb-5">
-                  <label for="message" class="block text-[#1A1A1A] font-medium mb-2 text-sm">Message</label>
+                  <label for="message" class="block text-[#EDE8E3] font-medium mb-2 text-sm">Message</label>
                   <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
-                  <p class="text-[#DC2626] text-sm mt-1 hidden" id="messageError">Please enter a message.</p>
+                  <p class="text-[#E06C6C] text-sm mt-1 hidden" id="messageError">Please enter a message.</p>
                 </div>
 
                 <button type="submit" class="btn btn--primary w-full">
@@ -410,28 +398,28 @@
             <div class="card p-7">
 
               <div class="flex items-start mb-6">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#EFF6FF] rounded-full text-[#2563EB] mr-4 flex-shrink-0">
+                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] mr-4 flex-shrink-0">
                   <i class="ri-time-line" aria-hidden="true"></i>
                 </div>
                 <div>
-                  <h3 class="text-sm font-semibold text-[#1A1A1A] mb-1">Availability</h3>
-                  <p class="text-[#6B6B6B] text-sm m-0">Available for new opportunities</p>
-                  <p class="text-[#6B6B6B] text-sm">Response within 24 hours</p>
+                  <h3 class="text-sm font-semibold text-[#EDE8E3] mb-1">Availability</h3>
+                  <p class="text-[#9C8E87] text-sm m-0">Available for new opportunities</p>
+                  <p class="text-[#9C8E87] text-sm">Response within 24 hours</p>
                 </div>
               </div>
 
               <div class="flex items-start mb-6">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#EFF6FF] rounded-full text-[#2563EB] mr-4 flex-shrink-0">
+                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] mr-4 flex-shrink-0">
                   <i class="ri-mail-line" aria-hidden="true"></i>
                 </div>
                 <div>
-                  <h3 class="text-sm font-semibold text-[#1A1A1A] mb-1">Email</h3>
-                  <p class="text-[#6B6B6B] text-sm m-0">fakhurjunejo12@gmail.com</p>
+                  <h3 class="text-sm font-semibold text-[#EDE8E3] mb-1">Email</h3>
+                  <p class="text-[#9C8E87] text-sm m-0">fakhurjunejo12@gmail.com</p>
                 </div>
               </div>
 
               <div class="mb-6">
-                <h3 class="text-sm font-semibold text-[#1A1A1A] mb-3">Connect</h3>
+                <h3 class="text-sm font-semibold text-[#EDE8E3] mb-3">Connect</h3>
                 <div class="flex gap-2">
                   <a href="https://www.linkedin.com/in/fakhurddin-junejo-65a127386/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" aria-label="LinkedIn profile">
                     <i class="ri-linkedin-fill ri-lg" aria-hidden="true"></i>
@@ -443,9 +431,9 @@
               </div>
 
               <div>
-                <h3 class="text-sm font-semibold text-[#1A1A1A] mb-3">Schedule a Call</h3>
-                <div class="bg-[#F2F1EE] p-4 rounded-lg">
-                  <p class="text-[#6B6B6B] text-sm mb-3">
+                <h3 class="text-sm font-semibold text-[#EDE8E3] mb-3">Schedule a Call</h3>
+                <div class="bg-[#1C1917] p-4 rounded-lg border border-[#3C3330]">
+                  <p class="text-[#9C8E87] text-sm mb-3">
                     Book a 30-minute consultation to discuss your data needs.
                   </p>
                   <a href="https://calendly.com/fakhurjunejo12/portfolio-consultation" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
@@ -460,11 +448,6 @@
           </div>
         </section>
 
-        <!-- FOOTER -->
-        <footer class="rp-footer" role="contentinfo">
-          <p>Designed &amp; built by <strong>Fakhurddin Junejo</strong></p>
-          <p class="footer-sub">Turning data into decisions — one pipeline at a time. &nbsp;·&nbsp; © 2025</p>
-        </footer>
 
       </main>
     </div>
@@ -473,5 +456,6 @@
     <script src="Scripts/contact.js"></script>
     <script src="Scripts/scroll.js"></script>
     <script src="Scripts/cursor.js"></script>
+    <script src="Scripts/projects.js"></script>
   </body>
 </html>
