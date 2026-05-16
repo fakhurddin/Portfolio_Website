@@ -21,8 +21,8 @@ body::before {
   z-index: 9999;
   background: radial-gradient(
     500px circle at var(--cursor-x, -9999px) var(--cursor-y, -9999px),
-    rgba(37, 99, 235, 0.18) 0%,
-    rgba(37, 99, 235, 0.09) 40%,
+    rgba(37, 99, 235, 0.08) 0%,
+    rgba(37, 99, 235, 0.04) 40%,
     transparent 70%
   );
   transition: background 0.08s ease;
