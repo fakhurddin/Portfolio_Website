@@ -1,78 +1,11 @@
-/* ======================
-   CARD COMPONENT STYLES
-   ====================== */
+/* ====================
+   EXPERTISE CARD
+   ==================== */
 
-/**
- * Base Card Styles
- * - Used for consistent card styling throughout the application
- */
-.card {
-  background: var(--light-card);
-  border: 1px solid var(--light-border);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-lg);
-  margin: var(--spacing-md) 0;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Hover effect for interactive cards */
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-/* ======================
-   SERVICE CARD COMPONENT
-   ====================== */
-
-/* Grid container for service cards */
 #services .grid {
   align-items: start;
 }
 
-/* Base Service Card Styles */
 .service-card {
-  transition: all 0.3s ease;
-  transform: translateZ(0); /* Hardware acceleration */
-  contain: layout;
-}
-
-/* Service Content Animation Styles */
-.service-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: max-height;
-  display: block !important;
-  visibility: hidden;
-}
-
-/* Expanded State Styles */
-.service-card.expanded {
-  background-color: #f9fafb; /* Slight background change for visual feedback */
-}
-
-.service-card.expanded .service-content {
-  visibility: visible;
-  max-height: var(--calc-height, 1000px); /* JS will set this dynamically */
-  transition-timing-function: cubic-bezier(0.5, 0, 0.3, 1);
-}
-
-/* Toggle Icon Animation */
-.toggle-icon {
-  transition: transform 0.4s ease;
-}
-
-.service-card.expanded .toggle-icon {
-  transform: rotate(180deg);
-}
-
-/* ======================
-   RESPONSIVE ADJUSTMENTS
-   ====================== */
-@media (max-width: 768px) {
-  .card {
-    padding: var(--card-padding);
-  }
+  transition: transform 250ms ease, box-shadow 250ms ease;
 }
