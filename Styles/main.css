@@ -488,3 +488,63 @@ img {
     align-items: flex-start;
   }
 }
+
+/* ==============================
+   EXPERIENCE LIST
+   ============================== */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-entry {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-entry:first-child {
+  padding-top: 0;
+}
+
+.exp-entry:last-child {
+  border-bottom: none;
+}
+
+.exp-entry__period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  padding-top: 0.2rem;
+  line-height: 1.4;
+}
+
+.exp-entry__role {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.125rem;
+  line-height: 1.3;
+}
+
+.exp-entry__company {
+  font-size: 0.8125rem;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.exp-entry__desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .exp-entry {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}

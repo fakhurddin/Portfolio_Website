@@ -1,6 +1,6 @@
 (function () {
   const navLinks = document.querySelectorAll('.lp-nav__link');
-  const sections = document.querySelectorAll('#about, #projects, #services, #contact');
+  const sections = document.querySelectorAll('#about, #projects, #services, #experience, #contact');
   const rightPanel = document.querySelector('.right-panel');
 
   navLinks.forEach(function (link) {
