@@ -11,6 +11,23 @@
 }
 
 /* ==============================
+   CURSOR SPOTLIGHT
+   ============================== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(
+    600px circle at var(--cursor-x, -9999px) var(--cursor-y, -9999px),
+    rgba(37, 99, 235, 0.055),
+    transparent 60%
+  );
+  transition: background 0.08s ease;
+}
+
+/* ==============================
    BASE RESET & GLOBAL
    ============================== */
 *,
