@@ -11,10 +11,14 @@ select {
   font-family: inherit;
   font-size: 0.9375rem;
   color: var(--text);
-  background-color: var(--bg);
+  background-color: #1F1A17;
   border: 1px solid var(--border);
   border-radius: 6px;
   transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+textarea {
+  resize: none;
 }
 
 input::placeholder,
