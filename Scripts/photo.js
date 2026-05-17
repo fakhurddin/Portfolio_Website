@@ -1,7 +1,7 @@
 (function () {
-  var modal = document.getElementById('photoModal');
-  var open  = document.getElementById('openPhotoModal');
-  var close = document.getElementById('closePhotoModal');
+  var modal    = document.getElementById('photoModal');
+  var openBtn  = document.getElementById('openPhotoModal');
+  var closeBtn = document.getElementById('closePhotoModal');
 
   function openModal() {
     modal.classList.add('is-open');
@@ -13,8 +13,8 @@
     document.body.style.overflow = '';
   }
 
-  open.addEventListener('click', openModal);
-  close.addEventListener('click', closeModal);
+  if (openBtn)  openBtn.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
   modal.addEventListener('click', function (e) {
     if (e.target === modal) closeModal();
