@@ -112,7 +112,7 @@
           <h2>About</h2>
           <div class="about-grid">
             <div class="about-photo">
-              <div class="overflow-hidden rounded-xl border border-[#3C3330]" style="width: 8rem; height: 10rem;">
+              <div class="about-photo-wrap" id="openPhotoModal" title="Click to view full photo">
                 <img
                   src="Images/Profile.jpg"
                   alt="Fakhurddin Junejo"
@@ -493,10 +493,16 @@
       </main>
     </div>
 
+    <div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="Full profile photo">
+      <button class="photo-modal__close" id="closePhotoModal" aria-label="Close">&times;</button>
+      <img src="Images/Profile-full.jpg" alt="Fakhurddin Junejo — full photo" class="photo-modal__img" />
+    </div>
+
     <script src="Scripts/navigation.js"></script>
     <script src="Scripts/contact.js"></script>
     <script src="Scripts/scroll.js"></script>
     <script src="Scripts/cursor.js"></script>
     <script src="Scripts/projects.js"></script>
+    <script src="Scripts/photo.js"></script>
   </body>
 </html>
