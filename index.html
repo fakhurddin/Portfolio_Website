@@ -7,16 +7,6 @@
       <title>Fakhurddin Junejo | Data Science & Analytics</title>
     <link rel="icon" type="image/png" href="Images/Favicon.png">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YQVDS9DWY"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-8YQVDS9DWY');
-      </script>
-    
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
       tailwind.config = {
@@ -112,7 +102,7 @@
           <h2>About</h2>
           <div class="about-grid">
             <div class="about-photo">
-              <div id="openPhotoModal" title="Click to view full photo" class="overflow-hidden rounded-xl border border-[#3C3330]" style="width: 8rem; height: 10rem; cursor: pointer;">
+              <div class="overflow-hidden rounded-xl border border-[#3C3330]" style="width: 8rem; height: 10rem;">
                 <img
                   src="Images/Profile.jpg"
                   alt="Fakhurddin Junejo"
@@ -384,7 +374,7 @@
             <div class="exp-entry">
               <div class="exp-entry__period">Jan – Jun 2026</div>
               <div class="exp-entry__body">
-                <h3 class="exp-entry__role"> <span class="ai-text">AI</span> - Teaching Assistant</h3>
+                <h3 class="exp-entry__role">Teaching Assistant</h3>
                 <p class="exp-entry__company">FAST NUCES Karachi</p>
                 <p class="exp-entry__desc">
                   Guided 40+ students through AI and Python — bridging theory and practice through hands-on assignments, coding tasks, and targeted feedback that drove measurable improvement.
@@ -493,16 +483,10 @@
       </main>
     </div>
 
-    <div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="Full profile photo">
-      <button class="photo-modal__close" id="closePhotoModal" aria-label="Close">&times;</button>
-      <img src="Images/Profile-full.jpg" alt="Fakhurddin Junejo — full photo" class="photo-modal__img" />
-    </div>
-
     <script src="Scripts/navigation.js"></script>
     <script src="Scripts/contact.js"></script>
     <script src="Scripts/scroll.js"></script>
     <script src="Scripts/cursor.js"></script>
     <script src="Scripts/projects.js"></script>
-    <script src="Scripts/photo.js"></script>
   </body>
 </html>
