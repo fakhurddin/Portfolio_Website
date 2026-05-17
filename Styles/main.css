@@ -548,3 +548,7 @@ img {
     gap: 0.25rem;
   }
 }
+
+.ai-text {
+  color: var(--accent);
+}
