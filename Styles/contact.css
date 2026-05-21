@@ -11,10 +11,10 @@ select {
   font-family: inherit;
   font-size: 0.9375rem;
   color: var(--text);
-  background-color: #1F1A17;
+  background-color: var(--bg);
   border: 1px solid var(--border);
   border-radius: 6px;
-  transition: border-color 150ms ease, box-shadow 150ms ease;
+  transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
 }
 
 textarea {
