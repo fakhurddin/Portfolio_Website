@@ -391,3 +391,63 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   .rd-photo--figure .rd-photo__fig, .rd-photo__ground { transition: none; }
   .rd-photo--figure:hover .rd-photo__fig { transform: none; }
 }
+
+/* ---------- LEFT PANEL: availability badge ---------- */
+.rd-status {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin: 0 0 clamp(0.875rem, 2.2vh, 1.25rem);
+  padding: 0.3125rem 0.75rem 0.3125rem 0.625rem;
+  border: 1px solid var(--border); border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600; color: var(--text);
+  background: color-mix(in srgb, var(--success) 8%, transparent);
+}
+.rd-status__dot { position: relative; width: 8px; height: 8px; border-radius: 999px; background: var(--success); flex: 0 0 auto; }
+.rd-status__dot::after {
+  content: ""; position: absolute; inset: -4px; border-radius: 999px; background: var(--success); opacity: 0.25;
+  animation: rd-pulse 2.4s ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) { .rd-status__dot::after { animation: none; } }
+@media (min-width: 1025px) {
+  .lp-title { white-space: nowrap; font-size: clamp(0.8125rem, 1.15vw, 1rem); }
+}
+/* shorter laptop screens: keep everything inside the fixed panel */
+@media (min-width: 1025px) and (max-height: 720px) {
+  .rd-status { margin-bottom: 0.625rem; }
+  .lp-name { font-size: clamp(1.75rem, min(2.8vw, 5vh), 2.5rem); }
+  .lp-tagline { font-size: 0.875rem; line-height: 1.55; }
+  .lp-nav { margin-top: 1.25rem; }
+  .lp-nav__link { height: 34px; }
+  .lp-social { padding-top: 0.75rem; }
+}
+@media (min-width: 1025px) and (max-height: 620px) {
+  .left-panel { padding-top: 1.5rem; padding-bottom: 1rem; }
+  .lp-tagline { font-size: 0.8125rem; line-height: 1.5; }
+  .lp-nav { margin-top: 1rem; gap: 0.125rem; }
+  .lp-nav__link { height: 32px; }
+  .rd-soc { width: 36px; height: 36px; }
+}
+
+/* ---------- STACKED LAYOUT (tablet + phone, portrait & landscape) ----------
+   Compact intro: name on one line where it fits, wider intro, menu as one
+   wrapped row of pill links (the sliding card is a desktop-only control). */
+@media (max-width: 1024px) {
+  .left-panel { min-height: 0; padding: 3rem 0 2rem; }
+  .lp-tagline { max-width: 560px; }
+  .lp-title { margin-bottom: 0.875rem; }
+  .lp-nav { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; max-width: none; margin-top: 1.75rem; }
+  .lp-nav__pill { display: none; }
+  .lp-nav__link {
+    height: 36px; padding: 0 0.875rem;
+    border: 1px solid var(--border); border-radius: 999px;
+    font-size: 0.6875rem;
+  }
+  .lp-nav__link:hover { border-color: color-mix(in srgb, var(--border), var(--text) 25%); }
+  .lp-nav__link.active { color: var(--text); border-color: var(--accent); }
+  .lp-social { margin-top: 1.5rem; }
+}
+@media (min-width: 560px) and (max-width: 1024px) {
+  .lp-name br { display: none; }
+}
+@media (max-width: 1024px) and (orientation: landscape) and (max-height: 500px) {
+  .left-panel { padding-top: 2rem; }
+}
