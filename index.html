@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="Styles/main.css">
     <link rel="stylesheet" href="Styles/project.css">
     <link rel="stylesheet" href="Styles/contact.css">
+    <link rel="stylesheet" href="Styles/redesign.css">
 
     <script src="Scripts/speed-insights.js"></script>
     <script src="Scripts/web-analytics.js"></script>
@@ -96,39 +97,40 @@
       <main class="right-panel" id="main-content">
 
         <!-- ABOUT -->
-        <section id="about" class="rp-section" aria-label="About">
+        <section id="about" class="rp-section rd-about" aria-label="About">
           <h2>About</h2>
-          <div class="about-grid">
-            <div class="about-photo">
-              <div class="overflow-hidden rounded-xl border border-[#3C3330]" style="width: 8rem; height: 10rem;">
-                <img
-                  src="Images/Profile.jpg"
-                  alt="Fakhurddin Junejo"
-                  class="w-full h-full object-cover"
-                />
+          <div class="rd-about__grid">
+            <div class="rd-about__text">
+              <p class="rd-about__lead">Good software starts with the people who use it.</p>
+              <p>I learn how their day works, find what slows them down and ship <strong>the simplest product that fixes it</strong>, then keep improving it as they use it.</p>
+              <p>Where it helps, I add <strong>data and AI</strong> so decisions get easier, not the product more complicated. I care about reliable code as much as a clean interface.</p>
+            </div>
+            <div class="rd-about__visual">
+              <div class="rd-photo">
+                <div class="rd-photo__glow" aria-hidden="true"></div>
+                <div class="rd-photo__card rd-photo__card--a" aria-hidden="true"></div>
+                <div class="rd-photo__card rd-photo__card--b" aria-hidden="true"></div>
+                <img src="Images/Profile.jpg" alt="Fakhurddin Junejo" width="170" height="204" />
+                <span class="rd-chip rd-chip--l rd-chip--1" aria-hidden="true"><span class="rd-chip__box"><span class="rd-chip__sizer"><span class="rd-chip__item"><i style="--d: #F0F6FC;"></i>Git &amp; GitHub</span></span><span class="rd-chip__cyc is-first" style="animation-delay: 0.0s;"><span class="rd-chip__item"><i style="--d: #E08A6A;"></i>Claude Code</span></span><span class="rd-chip__cyc" style="animation-delay: 3.0s;"><span class="rd-chip__item"><i style="--d: #F0F6FC;"></i>Codex</span></span><span class="rd-chip__cyc" style="animation-delay: 6.0s;"><span class="rd-chip__item"><i style="--d: #8AB4F8;"></i>Gemini API</span></span><span class="rd-chip__cyc" style="animation-delay: 9.0s;"><span class="rd-chip__item"><i style="--d: #F0F6FC;"></i>Git &amp; GitHub</span></span></span></span><span class="rd-chip rd-chip--r rd-chip--2" aria-hidden="true"><span class="rd-chip__box"><span class="rd-chip__sizer"><span class="rd-chip__item"><i style="--d: #5A9BE6;"></i>TypeScript</span></span><span class="rd-chip__cyc is-first" style="animation-delay: -0.75s;"><span class="rd-chip__item"><i style="--d: #61DAFB;"></i>React</span></span><span class="rd-chip__cyc" style="animation-delay: 2.25s;"><span class="rd-chip__item"><i style="--d: #5A9BE6;"></i>TypeScript</span></span><span class="rd-chip__cyc" style="animation-delay: 5.25s;"><span class="rd-chip__item"><i style="--d: #7CC36B;"></i>Node.js</span></span><span class="rd-chip__cyc" style="animation-delay: 8.25s;"><span class="rd-chip__item"><i style="--d: #F0607C;"></i>NestJS</span></span></span></span><span class="rd-chip rd-chip--l rd-chip--3" aria-hidden="true"><span class="rd-chip__box"><span class="rd-chip__sizer"><span class="rd-chip__item"><i style="--d: #F7931E;"></i>scikit-learn</span></span><span class="rd-chip__cyc is-first" style="animation-delay: -1.5s;"><span class="rd-chip__item"><i style="--d: #FFD43B;"></i>Python</span></span><span class="rd-chip__cyc" style="animation-delay: 1.5s;"><span class="rd-chip__item"><i style="--d: #9D8CFF;"></i>Pandas</span></span><span class="rd-chip__cyc" style="animation-delay: 4.5s;"><span class="rd-chip__item"><i style="--d: #F7931E;"></i>scikit-learn</span></span><span class="rd-chip__cyc" style="animation-delay: 7.5s;"><span class="rd-chip__item"><i style="--d: #F2C811;"></i>Power BI</span></span></span></span><span class="rd-chip rd-chip--r rd-chip--4" aria-hidden="true"><span class="rd-chip__box"><span class="rd-chip__sizer"><span class="rd-chip__item"><i style="--d: #7BA7D9;"></i>PostgreSQL</span></span><span class="rd-chip__cyc is-first" style="animation-delay: -2.25s;"><span class="rd-chip__item"><i style="--d: #7BA7D9;"></i>PostgreSQL</span></span><span class="rd-chip__cyc" style="animation-delay: 0.75s;"><span class="rd-chip__item"><i style="--d: #FFCA28;"></i>Firebase</span></span><span class="rd-chip__cyc" style="animation-delay: 3.75s;"><span class="rd-chip__item"><i style="--d: #60A5FA;"></i>REST APIs</span></span><span class="rd-chip__cyc" style="animation-delay: 6.75s;"><span class="rd-chip__item"><i style="--d: #F0F6FC;"></i>Express</span></span></span></span>
               </div>
             </div>
-            <div class="about-bio">
-              <p class="text-[#9C8E87] leading-relaxed text-sm">
-                Final-year Computer Science student specializing in Data Science &amp; Analytics.
-                I build predictive models, BI dashboards, and data pipelines that turn messy data
-                into clear, measurable business outcomes.
-              </p>
-            </div>
-            <div class="about-skills">
-              <p class="text-[#9C8E87] text-xs font-semibold uppercase tracking-widest mb-2">Skills</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="tag">SQL</span>
-                <span class="tag">Power BI</span>
-                <span class="tag">Python</span>
-                <span class="tag">Excel</span>
-                <span class="tag">ETL</span>
-                <span class="tag">Data Modeling</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">Data Visualization</span>
-                <span class="tag">Machine Learning</span>
-              </div>
-            </div>
+          </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section id="products" class="rp-section" aria-label="Products">
+          <h2>Products</h2>
+          <div class="rd-list">
+            <article class="card rd-card">
+              <div class="rd-card__head"><div class="rd-card__title"><span class="rd-logo"><img src="Images/products/sabki/logo.png" alt="" width="26" height="26" /></span><h3>SabKi Sawari</h3><span class="rd-pill">Pre-launch</span></div><div class="rd-card__actions"><a href="work/sabki-sawari/" class="btn btn--secondary btn--sm"><i class="ri-file-text-line" aria-hidden="true"></i>Case study</a><a href="https://sabkisawari.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm"><i class="ri-external-link-line" aria-hidden="true"></i>View</a></div></div>
+              <p class="rd-card__desc">Intercity van seat booking for Sindh, with dedicated apps for passengers, drivers and vehicle owners.</p>
+              <div class="rd-tags"><span class="rd-tag" style="--b: #61DAFB; --bl: #047EA0;">React</span><span class="rd-tag" style="--b: #7BA7D9; --bl: #3777C0;">PostgreSQL</span><span class="rd-tag" style="--b: #3DDC84; --bl: #188649;">Android</span><span class="rd-tag" style="--b: #E08A6A; --bl: #C55329;">Claude Code</span><span class="rd-tag">EN · اردو</span></div>
+            </article>
+            <article class="card rd-card">
+              <div class="rd-card__head"><div class="rd-card__title"><span class="rd-logo rd-logo--fk"><svg width="18" height="18" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="19" y="4" width="26" height="26" rx="6" fill="#0F766E"></rect><rect x="4" y="34" width="26" height="26" rx="6" fill="#1E3A5F"></rect><rect x="34" y="34" width="26" height="26" rx="6" fill="#1E3A5F"></rect></svg></span><h3>Feed Khata</h3><span class="rd-pill">In use</span></div><div class="rd-card__actions"><a href="work/feed-khata/" class="btn btn--secondary btn--sm"><i class="ri-file-text-line" aria-hidden="true"></i>Case study</a></div></div>
+              <p class="rd-card__desc">Back-office software for feed traders: stock, sales, payments and demand forecasts in one place.</p>
+              <div class="rd-tags"><span class="rd-tag" style="--b: #61DAFB; --bl: #047EA0;">React</span><span class="rd-tag" style="--b: #F0607C; --bl: #E8153E;">NestJS</span><span class="rd-tag" style="--b: #7BA7D9; --bl: #3777C0;">PostgreSQL</span><span class="rd-tag" style="--b: #E08A6A; --bl: #C55329;">Claude Code</span></div>
+            </article>
           </div>
         </section>
 
@@ -230,71 +232,25 @@
           </div>
         </section>
 
-        <!-- EXPERTISE -->
-        <section id="services" class="rp-section" aria-label="Expertise">
-          <h2>Expertise</h2>
-          <div class="grid grid-cols-1 gap-4">
-
-            <div class="card p-5">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] flex-shrink-0">
-                  <i class="ri-line-chart-line ri-lg" aria-hidden="true"></i>
-                </div>
-                <h3 class="text-base font-semibold text-[#EDE8E3] m-0">Business Intelligence</h3>
-              </div>
-              <p class="text-[#9C8E87] text-sm leading-relaxed m-0">
-                KPI tracking, performance analytics, and reporting systems that surface strategic decisions from operational data.
-              </p>
-            </div>
-
-            <div class="card p-5">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] flex-shrink-0">
-                  <i class="ri-bar-chart-box-line ri-lg" aria-hidden="true"></i>
-                </div>
-                <h3 class="text-base font-semibold text-[#EDE8E3] m-0">Data Visualization</h3>
-              </div>
-              <p class="text-[#9C8E87] text-sm leading-relaxed m-0">
-                Interactive Tableau and Power BI dashboards that reveal patterns hidden in your data and drive clear action.
-              </p>
-            </div>
-
-            <div class="card p-5">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] flex-shrink-0">
-                  <i class="ri-braces-line ri-lg" aria-hidden="true"></i>
-                </div>
-                <h3 class="text-base font-semibold text-[#EDE8E3] m-0">Predictive Modeling</h3>
-              </div>
-              <p class="text-[#9C8E87] text-sm leading-relaxed m-0">
-                Custom ML models in Python — from regression analysis to ensemble methods — tuned to your specific business problem.
-              </p>
-            </div>
-
+        <!-- SKILLS -->
+        <section id="services" class="rp-section rd-skills" aria-label="Skills">
+          <h2>Skills</h2>
+          <div class="rd-skills__grid">
+            <div class="rd-skills__group"><h3>Product engineering</h3><div class="rd-tags"><span class="rd-tag" style="--b: #61DAFB; --bl: #047EA0;">React</span><span class="rd-tag" style="--b: #5A9BE6; --bl: #2075D7;">TypeScript</span><span class="rd-tag" style="--b: #7CC36B; --bl: #427F33;">Node.js</span><span class="rd-tag" style="--b: #F0F6FC; --bl: #24292F;">Express</span><span class="rd-tag" style="--b: #F0607C; --bl: #E8153E;">NestJS</span><span class="rd-tag" style="--b: #7BA7D9; --bl: #3777C0;">PostgreSQL</span><span class="rd-tag" style="--b: #FFCA28; --bl: #8D6A00;">Firebase</span><span class="rd-tag" style="--b: #60A5FA; --bl: #076EEC;">REST APIs</span></div></div>
+            <div class="rd-skills__group"><h3>Data &amp; ML</h3><div class="rd-tags"><span class="rd-tag" style="--b: #FFD43B; --bl: #8C6D00;">Python</span><span class="rd-tag" style="--b: #9D8CFF; --bl: #7159FE;">Pandas</span><span class="rd-tag" style="--b: #C9B8A8; --bl: #6B5B4E;">SQL</span><span class="rd-tag" style="--b: #F7931E; --bl: #A85D06;">scikit-learn</span><span class="rd-tag" style="--b: #F2C811; --bl: #8B7207;">Power BI</span><span class="rd-tag" style="--b: #F28C38; --bl: #B7590C;">Tableau</span><span class="rd-tag" style="--b: #C9B8A8; --bl: #6B5B4E;">Forecasting</span></div></div>
+            <div class="rd-skills__group"><h3>AI &amp; tools</h3><div class="rd-tags"><span class="rd-tag" style="--b: #E08A6A; --bl: #C55329;">Claude Code</span><span class="rd-tag" style="--b: #F0F6FC; --bl: #24292F;">Codex</span><span class="rd-tag" style="--b: #8AB4F8; --bl: #2070F1;">Gemini API</span><span class="rd-tag" style="--b: #F0F6FC; --bl: #24292F;">Git &amp; GitHub</span><span class="rd-tag" style="--b: #45BA4B; --bl: #318535;">Playwright</span></div></div>
+            <div class="rd-skills__group"><h3>Strengths</h3><div class="rd-tags"><span class="rd-tag">Product thinking</span><span class="rd-tag">System design</span><span class="rd-tag">Ownership</span></div></div>
           </div>
         </section>
 
         <!-- EXPERIENCE -->
         <section id="experience" class="rp-section" aria-label="Experience">
           <h2>Experience</h2>
-          <div class="exp-list">
-
-            <div class="exp-entry">
-              <div class="exp-entry__period">Jan – Jun 2026</div>
-              <div class="exp-entry__body">
-                <h3 class="exp-entry__role">Teaching Assistant — <span style="color: #60A5FA;">AI</span></h3>
-                <p class="exp-entry__company">FAST NUCES Karachi</p>
-                <p class="exp-entry__desc">
-                  Guided 40+ students through AI and Python — bridging theory and practice through hands-on assignments, coding tasks, and targeted feedback that drove measurable improvement.
-                </p>
-                <div class="flex flex-wrap gap-2 mt-3">
-                  <span class="tag">AI</span>
-                  <span class="tag">Machine Learning</span>
-                  <span class="tag">Python</span>
-                </div>
-              </div>
-            </div>
-
+          <div class="rd-exp">
+            <div class="rd-exp__item"><div class="rd-exp__date">Oct 2026 — Now</div><div><h3 class="rd-exp__role">Founder &amp; Developer · <span class="rd-exp__org">Feed Khata</span></h3><p class="rd-exp__desc">Back-office software for feed traders. Built stock, sales, payments and demand forecasting with NestJS, PostgreSQL and React; in daily use.</p></div></div>
+            <div class="rd-exp__item"><div class="rd-exp__date">Jun 2026 — Now</div><div><h3 class="rd-exp__role">Founder &amp; Developer · <span class="rd-exp__org">SabKi Sawari</span></h3><p class="rd-exp__desc">Intercity seat-booking platform. Built web and Android apps for passengers, drivers and vehicle owners, with seat locking, live tracking and English/Urdu support.</p></div></div>
+            <div class="rd-exp__item"><div class="rd-exp__date">Jan — Jun 2026</div><div><h3 class="rd-exp__role">Teaching Assistant, AI · <span class="rd-exp__org">FAST-NUCES Karachi</span></h3><p class="rd-exp__desc">Supported 40+ students in the AI course through Python assignments, coding tasks and feedback.</p></div></div>
+            <div class="rd-exp__item"><div class="rd-exp__date">2022 — 2026</div><div><h3 class="rd-exp__role">BS Computer Science · <span class="rd-exp__org">FAST-NUCES Karachi</span></h3><p class="rd-exp__desc">Studied algorithms, databases, software engineering and artificial intelligence.</p></div></div>
           </div>
         </section>
 

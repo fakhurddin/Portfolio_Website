@@ -1,0 +1,182 @@
+/* ==========================================================
+   REDESIGN — About, Products, Skills, Experience
+   Uses the site's theme variables, so light/dark both work.
+   ========================================================== */
+
+/* Never allow sideways scrolling (clip keeps the sticky left panel working) */
+html, body { overflow-x: hidden; overflow-x: clip; }
+
+/* ---------- Shared tag: grey at rest, brand colour on hover ---------- */
+.rd-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  white-space: nowrap;
+  cursor: default;
+  transition: border-color 200ms ease, color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+.rd-tag:hover {
+  border-color: var(--b, var(--accent));
+  color: var(--b, var(--accent));
+  background-color: color-mix(in srgb, var(--b, var(--accent)) 12%, transparent);
+  transform: translateY(-2px);
+}
+[data-theme="light"] .rd-tag:hover {
+  border-color: var(--bl, var(--accent));
+  color: var(--bl, var(--accent));
+  background-color: color-mix(in srgb, var(--bl, var(--accent)) 10%, transparent);
+}
+
+/* ---------- Status pill ---------- */
+.rd-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--success);
+  white-space: nowrap;
+}
+.rd-pill::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
+}
+[data-theme="light"] .rd-pill { color: #2F7A4B; }
+
+/* ---------- ABOUT ---------- */
+.rd-about { container-type: inline-size; }
+.rd-about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 3.5rem;
+  align-items: center;
+}
+.rd-about__text { display: flex; flex-direction: column; gap: 0.75rem; }
+.rd-about__lead {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.rd-about__text p:not(.rd-about__lead) {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+.rd-about__text strong { color: var(--text); font-weight: 600; }
+.rd-about__visual { display: flex; justify-content: center; padding: 1.5rem 0; }
+
+@container (max-width: 520px) {
+  .rd-about__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .rd-about__visual { order: -1; padding: 1.25rem 0 0.5rem; }
+}
+
+/* photo: stacked cards + float + glow + cycling chips */
+.rd-photo { position: relative; width: 170px; height: 204px; animation: rdFloat 6s ease-in-out infinite; }
+.rd-photo__glow {
+  position: absolute; inset: -32px; border-radius: 999px; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(96, 165, 250, 0.28), rgba(96, 165, 250, 0));
+  animation: rdGlow 4.5s ease-in-out infinite;
+}
+.rd-photo__card {
+  position: absolute; inset: 0; border-radius: 18px;
+  background: var(--surface); border: 1px solid var(--border);
+  transition: transform 450ms cubic-bezier(.2, .7, .2, 1);
+}
+.rd-photo__card--a { transform: rotate(-7deg); }
+.rd-photo__card--b { transform: rotate(4deg); }
+.rd-photo img {
+  position: relative; width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+  border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 450ms cubic-bezier(.2, .7, .2, 1);
+}
+.rd-photo:hover .rd-photo__card--a { transform: rotate(-12deg) translate(-14px, 6px); }
+.rd-photo:hover .rd-photo__card--b { transform: rotate(9deg) translate(14px, 4px); }
+.rd-photo:hover img { transform: translateY(-6px) scale(1.02); }
+
+.rd-chip {
+  position: absolute; z-index: 2;
+  display: inline-flex; align-items: center;
+  padding: 0.35rem 0.7rem; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  font-size: 0.75rem; font-weight: 600; color: var(--text); white-space: nowrap;
+  animation: rdChip 5s ease-in-out infinite;
+  transition: translate 450ms cubic-bezier(.2, .7, .2, 1);
+}
+/* 60% of each chip sits outside the photo, 40% over it */
+.rd-chip--l { right: 100%; translate: 40% 0; }
+.rd-chip--r { left: 100%; translate: -40% 0; }
+.rd-chip--1 { top: 10px; }
+.rd-chip--2 { top: 26%; animation-delay: -1.6s; }
+.rd-chip--3 { top: 58%; animation-delay: -3.2s; }
+.rd-chip--4 { bottom: 12px; animation-delay: -4.1s; }
+.rd-photo:hover .rd-chip--l { translate: calc(40% - 8px) 0; }
+.rd-photo:hover .rd-chip--r { translate: calc(-40% + 8px) 0; }
+
+.rd-chip__box { position: relative; display: inline-flex; align-items: center; }
+.rd-chip__item { display: inline-flex; align-items: center; gap: 0.45rem; white-space: nowrap; }
+.rd-chip__item i { width: 7px; height: 7px; border-radius: 999px; background: var(--d); flex: 0 0 auto; }
+.rd-chip__sizer { visibility: hidden; }
+.rd-chip__cyc { position: absolute; inset: 0 auto 0 0; opacity: 0; animation: rdCycle 12s ease-in-out infinite; }
+
+@keyframes rdFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes rdGlow  { 0%, 100% { opacity: .55; transform: scale(1); } 50% { opacity: .9; transform: scale(1.06); } }
+@keyframes rdChip  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes rdCycle { 0% { opacity: 0; transform: translateY(8px); } 4%, 22% { opacity: 1; transform: none; } 26%, 100% { opacity: 0; transform: translateY(-8px); } }
+
+/* ---------- PRODUCTS ---------- */
+.rd-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.rd-card { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.rd-card__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+.rd-card__title { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; min-width: 0; }
+.rd-card__title h3 { margin: 0; font-size: 1rem; font-weight: 700; color: var(--text); }
+.rd-card__actions { display: flex; gap: 0.5rem; flex: 0 0 auto; }
+.rd-card__desc { margin: 0; font-size: 0.875rem; line-height: 1.65; color: var(--text-muted); }
+.rd-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.rd-logo { width: 26px; height: 26px; border-radius: 7px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; overflow: hidden; }
+.rd-logo img { width: 100%; height: 100%; object-fit: cover; }
+.rd-logo--fk { background: #F4F1EE; }
+
+/* ---------- SKILLS ---------- */
+.rd-skills { container-type: inline-size; }
+.rd-skills__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2rem; }
+.rd-skills__group h3 { margin: 0 0 0.6rem; font-size: 0.875rem; font-weight: 700; color: var(--text); }
+@container (max-width: 460px) { .rd-skills__grid { grid-template-columns: 1fr; } }
+
+/* ---------- EXPERIENCE ---------- */
+.rd-exp { display: flex; flex-direction: column; }
+.rd-exp__item {
+  display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 0 1.5rem;
+  padding: 1rem 0; border-bottom: 1px solid var(--border);
+}
+.rd-exp__item:first-child { padding-top: 0; }
+.rd-exp__item:last-child { border-bottom: none; }
+.rd-exp__date { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--text-muted); padding-top: 0.2rem; line-height: 1.4; }
+.rd-exp__role { margin: 0 0 0.25rem; font-size: 0.9375rem; font-weight: 600; color: var(--text); line-height: 1.35; }
+.rd-exp__org { color: var(--text-muted); font-weight: 500; }
+.rd-exp__desc { margin: 0; font-size: 0.8125rem; line-height: 1.6; color: var(--text-muted); }
+@media (max-width: 480px) { .rd-exp__item { grid-template-columns: 1fr; gap: 0.25rem; } }
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rd-photo, .rd-photo__glow, .rd-chip, .rd-chip__cyc { animation: none; }
+  .rd-chip__cyc.is-first { opacity: 1; }
+  .rd-photo__card, .rd-photo img, .rd-chip, .rd-tag { transition: none; }
+}
