@@ -19,6 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   }
 
+  // "Send another message" brings the form back
+  const again = document.getElementById('contactAgain');
+  if (again) {
+    again.addEventListener('click', function () {
+      document.getElementById('contactSent').hidden = true;
+      form.hidden = false;
+      form.querySelector('#name')?.focus();
+    });
+  }
+
   // Handle form submission and validation
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -47,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Validate Message
     if (!message.value.trim()) {
-      showError(message, 'messageError', 'Your message is not visible.');
+      showError(message, 'messageError', 'Please enter a message.');
       isValid = false;
     }
 
@@ -81,6 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
           Message Sent!
         `;
         form.reset();
+
+        // Swap the form for the in-card confirmation
+        const sent = document.getElementById('contactSent');
+        if (sent) {
+          form.hidden = true;
+          sent.hidden = false;
+        }
 
         // Smooth scroll to redirect section if available
         const redirect = form.querySelector('[name="redirect"]')?.value;

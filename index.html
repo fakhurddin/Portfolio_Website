@@ -245,65 +245,60 @@
         <!-- CONTACT -->
         <section id="contact" class="rp-section" aria-label="Contact">
           <h2>Contact</h2>
-          <div class="flex flex-col gap-5">
+          <div class="rd-contact" id="contactCard">
 
-            <div>
-              <form id="contactForm" class="card p-7">
-                <input type="hidden" name="access_key" value="1e8d486d-2b64-4c6b-8b37-dcbbda2f9ccf">
-                <input type="hidden" name="subject" value="New Contact from Website">
-                <input type="hidden" name="redirect" value="#contact">
-
-                <div class="mb-4">
-                  <label for="name" class="block text-[#EDE8E3] font-medium mb-2 text-sm">Name</label>
-                  <input type="text" id="name" name="name" placeholder=" Your name" />
-                  <p class="text-[#E06C6C] text-sm mt-1 hidden" id="nameError">Please fill in this field.</p>
-                </div>
-
-                <div class="mb-4">
-                  <label for="email" class="block text-[#EDE8E3] font-medium mb-2 text-sm">Email</label>
-                  <input type="email" id="email" name="email" placeholder=" Your email" />
-                  <p class="text-[#E06C6C] text-sm mt-1 hidden" id="emailError">Please enter a valid email.</p>
-                </div>
-
-                <div class="mb-5">
-                  <label for="message" class="block text-[#EDE8E3] font-medium mb-2 text-sm">Message</label>
-                  <textarea id="message" name="message" rows="4" placeholder=" Your message"></textarea>
-                  <p class="text-[#E06C6C] text-sm mt-1 hidden" id="messageError">Please enter a message.</p>
-                </div>
-
-                <button type="submit" class="btn btn--primary w-full">
-                  <i class="ri-send-plane-line" aria-hidden="true"></i>
-                  Send Message
-                </button>
-              </form>
+            <div class="rd-contact__status">
+              <span class="rd-contact__avail"><span class="rd-contact__dot" aria-hidden="true"></span>Available for new opportunities</span>
+              <span class="rd-contact__reply"><i class="ri-time-line" aria-hidden="true"></i>Replies within 24 hours</span>
             </div>
 
-            <div class="card p-7">
+            <form id="contactForm" class="rd-contact__body" novalidate>
+              <input type="hidden" name="access_key" value="1e8d486d-2b64-4c6b-8b37-dcbbda2f9ccf">
+              <input type="hidden" name="subject" value="New Contact from Website">
+              <input type="hidden" name="redirect" value="#contact">
 
-              <div class="flex items-start mb-6">
-                <div class="w-9 h-9 flex items-center justify-center bg-[#172032] rounded-full text-[#60A5FA] mr-4 flex-shrink-0">
-                  <i class="ri-time-line" aria-hidden="true"></i>
+              <div class="rd-contact__row">
+                <div class="rd-field">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+                  <p class="text-[#E06C6C] text-sm mt-1 hidden" id="nameError">Please fill in this field.</p>
                 </div>
-                <div>
-                  <h3 class="text-sm font-semibold text-[#EDE8E3] mb-1">Availability</h3>
-                  <p class="text-[#9C8E87] text-sm m-0">Available for new opportunities</p>
-                  <p class="text-[#9C8E87] text-sm">Response within 24 hours</p>
+                <div class="rd-field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" />
+                  <p class="text-[#E06C6C] text-sm mt-1 hidden" id="emailError">Please enter a valid email.</p>
                 </div>
               </div>
 
-              <div>
-                <h3 class="text-sm font-semibold text-[#EDE8E3] mb-3">Schedule a Call</h3>
-                <div class="bg-[#1C1917] p-4 rounded-lg border border-[#3C3330]">
-                  <p class="text-[#9C8E87] text-sm mb-3">
-                    Book a 30-minute consultation to discuss your data needs.
-                  </p>
-                  <a href="https://calendly.com/fakhurjunejo12/portfolio-consultation" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+              <div class="rd-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="What are you building, and how can I help?"></textarea>
+                <p class="text-[#E06C6C] text-sm mt-1 hidden" id="messageError">Please enter a message.</p>
+              </div>
+
+              <div class="rd-contact__foot">
+                <button type="submit" class="btn btn--primary">
+                  <i class="ri-send-plane-line" aria-hidden="true"></i>
+                  Send message
+                </button>
+                <span class="rd-contact__or" aria-hidden="true">or</span>
+                <div class="rd-contact__alt">
+                  <span class="rd-contact__alt-label">Prefer to talk?</span>
+                  <a href="https://calendly.com/fakhurjunejo12/portfolio-consultation" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
                     <i class="ri-calendar-line" aria-hidden="true"></i>
-                    Schedule on Calendly
+                    Book a 30-min call
                   </a>
                 </div>
               </div>
+            </form>
 
+            <div class="rd-contact__sent" id="contactSent" role="status" hidden>
+              <span class="rd-contact__check" aria-hidden="true"><i class="ri-check-line"></i></span>
+              <div>
+                <p class="rd-contact__sent-title">Message sent.</p>
+                <p class="rd-contact__sent-text">Thanks for reaching out. I'll reply within 24 hours.</p>
+                <button type="button" class="rd-contact__again" id="contactAgain">Send another message</button>
+              </div>
             </div>
 
           </div>
