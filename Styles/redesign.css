@@ -296,7 +296,7 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 
 /* ---------- ABOUT: standing 3D figure (replaces the photo cards) ----------
    Grounded, not floating: no float animation, a soft contact shadow at the feet. */
-.rd-photo--figure { width: 112px; height: 360px; animation: none; }
+.rd-photo--figure { width: 124px; height: 398px; animation: none; }
 .rd-photo--figure .rd-photo__glow { inset: 10px -70px 80px; animation: rdGlow 4.5s ease-in-out infinite; }
 .rd-photo__ground {
   position: absolute; left: 50%; bottom: -6px; width: 128px; height: 16px; translate: -50% 0;
@@ -376,7 +376,7 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 
 /* ---------- ABOUT: character lifted to line up with the section, pro hover ---------- */
 @container (min-width: 521px) {
-  .rd-about__visual:has(.rd-photo--figure) { padding: 0; margin-top: -2.5rem; }
+  .rd-about__visual:has(.rd-photo--figure) { padding: 0; margin-top: -0.75rem; }
 }
 .rd-photo--figure .rd-photo__fig {
   transform-origin: 50% 100%;
@@ -457,3 +457,4 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 #themeIcon.is-turning { animation: rdTurn 500ms cubic-bezier(.2, .7, .2, 1); }
 @keyframes rdTurn { from { transform: rotate(-90deg) scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { #themeIcon.is-turning { animation: none; } }
+.rd-soc__svg { display: block; width: 1.125rem; height: 1.125rem; }
