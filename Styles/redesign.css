@@ -188,3 +188,31 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 @media (max-width: 1024px) {
   .left-panel { min-height: 0; justify-content: flex-start; gap: 2.25rem; padding-bottom: 2.5rem; }
 }
+
+/* ---------- Round social / theme buttons (left panel) ----------
+   Grey at rest, the brand's own colour on hover — same behaviour as .rd-tag. */
+.rd-soc-row { gap: 0.5rem; flex-wrap: nowrap; }
+.rd-soc {
+  width: 44px; height: 44px; flex: 0 0 auto;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.15rem; line-height: 1;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+.rd-soc:hover, .rd-soc:focus-visible {
+  border-color: var(--b, var(--accent));
+  color: var(--b, var(--accent));
+  background-color: color-mix(in srgb, var(--b, var(--accent)) 12%, transparent);
+  transform: translateY(-2px);
+}
+[data-theme="light"] .rd-soc:hover, [data-theme="light"] .rd-soc:focus-visible {
+  border-color: var(--bl, var(--accent));
+  color: var(--bl, var(--accent));
+  background-color: color-mix(in srgb, var(--bl, var(--accent)) 10%, transparent);
+}
+.rd-soc:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .rd-soc { transition: none; } .rd-soc:hover { transform: none; } }
