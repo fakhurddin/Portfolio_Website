@@ -60,8 +60,8 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 .rd-about { container-type: inline-size; }
 .rd-about__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  gap: 3.5rem;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 4.5rem;
   align-items: center;
 }
 .rd-about__text { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -80,11 +80,12 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   color: var(--text-muted);
 }
 .rd-about__text strong { color: var(--text); font-weight: 600; }
-.rd-about__visual { display: flex; justify-content: center; padding: 1.5rem 0; }
+/* photo sits left in its column so the outside chips stay on screen at every width */
+.rd-about__visual { display: flex; justify-content: flex-start; padding: 1.5rem 0; }
 
 @container (max-width: 520px) {
   .rd-about__grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .rd-about__visual { order: -1; padding: 1.25rem 0 0.5rem; }
+  .rd-about__visual { order: -1; justify-content: center; padding: 1.25rem 0 0.5rem; }
 }
 
 /* photo: stacked cards + float + glow + cycling chips */
@@ -179,4 +180,11 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   .rd-photo, .rd-photo__glow, .rd-chip, .rd-chip__cyc { animation: none; }
   .rd-chip__cyc.is-first { opacity: 1; }
   .rd-photo__card, .rd-photo img, .rd-chip, .rd-tag { transition: none; }
+}
+
+/* ---------- STACKED LAYOUT (tablet & phone) ----------
+   The profile block stacks above the content: size it to its content with
+   steady spacing instead of a fixed screen height. */
+@media (max-width: 1024px) {
+  .left-panel { min-height: 0; justify-content: flex-start; gap: 2.25rem; padding-bottom: 2.5rem; }
 }
