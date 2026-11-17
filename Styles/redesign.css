@@ -192,6 +192,8 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 /* ---------- Round social / theme buttons (left panel) ----------
    Grey at rest, the brand's own colour on hover — same behaviour as .rd-tag. */
 .rd-soc-row { gap: 0.5rem; flex-wrap: nowrap; }
+/* desktop: centre the row inside the left (40%) column */
+@media (min-width: 1025px) { .rd-soc-row { justify-content: center; } }
 .rd-soc {
   width: 44px; height: 44px; flex: 0 0 auto;
   display: inline-flex; align-items: center; justify-content: center;
