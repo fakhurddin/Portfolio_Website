@@ -45,9 +45,11 @@
         </div>
 
         <nav class="lp-nav" aria-label="Page sections">
-          <a href="#about"    class="lp-nav__link">About</a>
-          <a href="#projects" class="lp-nav__link">Projects</a>
-          <a href="#services"    class="lp-nav__link">Expertise</a>
+          <span class="lp-nav__pill" aria-hidden="true"></span>
+          <a href="#about"      class="lp-nav__link">About</a>
+          <a href="#products"   class="lp-nav__link">Products</a>
+          <a href="#projects"   class="lp-nav__link">Projects</a>
+          <a href="#services"   class="lp-nav__link">Skills</a>
           <a href="#experience" class="lp-nav__link">Experience</a>
           <a href="#contact"    class="lp-nav__link">Contact</a>
         </nav>
@@ -74,11 +76,9 @@
               <p>Where it helps, I add <strong>data and AI</strong> so decisions get easier, not the product more complicated. I care about reliable code as much as a clean interface.</p>
             </div>
             <div class="rd-about__visual">
-              <div class="rd-photo">
-                <div class="rd-photo__glow" aria-hidden="true"></div>
-                <div class="rd-photo__card rd-photo__card--a" aria-hidden="true"></div>
-                <div class="rd-photo__card rd-photo__card--b" aria-hidden="true"></div>
-                <img src="Images/Profile.jpg" alt="Fakhurddin Junejo" width="170" height="204" />
+              <div class="rd-photo rd-photo--figure">
+                <span class="rd-photo__ground" aria-hidden="true"></span>
+                <img class="rd-photo__fig" src="Images/avatar-3d.webp" alt="3D avatar of Fakhurddin Junejo" width="112" height="360" />
                 <span class="rd-chip rd-chip--l rd-chip--1" aria-hidden="true"><span class="rd-chip__box"><span class="rd-chip__sizer"><span class="rd-chip__item"><i style="--d: #F0F6FC;"></i>Git &amp; GitHub</span></span><span class="rd-chip__cyc is-first" style="animation-delay: 0.0s;"><span class="rd-chip__item"><i style="--d: #E08A6A;"></i>Claude Code</span></span><span class="rd-chip__cyc" style="animation-delay: 3.0s;"><span class="rd-chip__item"><i style="--d: #F0F6FC;"></i>Codex</span></span><span class="rd-chip__cyc" style="animation-delay: 6.0s;"><span class="rd-chip__item"><i style="--d: #8AB4F8;"></i>Gemini API</span></span><span class="rd-chip__cyc" style="animation-delay: 9.0s;"><span class="rd-chip__item"><i style="--d: #F0F6FC;"></i>Git &amp; GitHub</span></span></span></span><span class="rd-chip rd-chip--r rd-chip--2" aria-hidden="true"><span class="rd-chip__box"><span class="rd-chip__sizer"><span class="rd-chip__item"><i style="--d: #5A9BE6;"></i>TypeScript</span></span><span class="rd-chip__cyc is-first" style="animation-delay: -0.75s;"><span class="rd-chip__item"><i style="--d: #61DAFB;"></i>React</span></span><span class="rd-chip__cyc" style="animation-delay: 2.25s;"><span class="rd-chip__item"><i style="--d: #5A9BE6;"></i>TypeScript</span></span><span class="rd-chip__cyc" style="animation-delay: 5.25s;"><span class="rd-chip__item"><i style="--d: #7CC36B;"></i>Node.js</span></span><span class="rd-chip__cyc" style="animation-delay: 8.25s;"><span class="rd-chip__item"><i style="--d: #F0607C;"></i>NestJS</span></span></span></span><span class="rd-chip rd-chip--l rd-chip--3" aria-hidden="true"><span class="rd-chip__box"><span class="rd-chip__sizer"><span class="rd-chip__item"><i style="--d: #F7931E;"></i>scikit-learn</span></span><span class="rd-chip__cyc is-first" style="animation-delay: -1.5s;"><span class="rd-chip__item"><i style="--d: #FFD43B;"></i>Python</span></span><span class="rd-chip__cyc" style="animation-delay: 1.5s;"><span class="rd-chip__item"><i style="--d: #9D8CFF;"></i>Pandas</span></span><span class="rd-chip__cyc" style="animation-delay: 4.5s;"><span class="rd-chip__item"><i style="--d: #F7931E;"></i>scikit-learn</span></span><span class="rd-chip__cyc" style="animation-delay: 7.5s;"><span class="rd-chip__item"><i style="--d: #F2C811;"></i>Power BI</span></span></span></span><span class="rd-chip rd-chip--r rd-chip--4" aria-hidden="true"><span class="rd-chip__box"><span class="rd-chip__sizer"><span class="rd-chip__item"><i style="--d: #7BA7D9;"></i>PostgreSQL</span></span><span class="rd-chip__cyc is-first" style="animation-delay: -2.25s;"><span class="rd-chip__item"><i style="--d: #7BA7D9;"></i>PostgreSQL</span></span><span class="rd-chip__cyc" style="animation-delay: 0.75s;"><span class="rd-chip__item"><i style="--d: #FFCA28;"></i>Firebase</span></span><span class="rd-chip__cyc" style="animation-delay: 3.75s;"><span class="rd-chip__item"><i style="--d: #60A5FA;"></i>REST APIs</span></span><span class="rd-chip__cyc" style="animation-delay: 6.75s;"><span class="rd-chip__item"><i style="--d: #F0F6FC;"></i>Express</span></span></span></span>
               </div>
             </div>
@@ -273,6 +273,10 @@
         </section>
 
 
+        <footer class="rd-footer">
+          <span>&copy; 2026 Fakhurddin Junejo &middot; All rights reserved.</span>
+          <span class="rd-footer__r"><span>Designed &amp; built by me</span><a href="#about" class="rd-footer__top">Back to top &uarr;</a></span>
+        </footer>
       </main>
     </div>
 

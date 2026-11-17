@@ -293,3 +293,57 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   .rd-contact__or::before, .rd-contact__or::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 }
 @media (prefers-reduced-motion: reduce) { .rd-contact__dot::after { animation: none; } }
+
+/* ---------- ABOUT: standing 3D figure (replaces the photo cards) ----------
+   Grounded, not floating: no float animation, a soft contact shadow at the feet. */
+.rd-photo--figure { width: 112px; height: 360px; animation: none; }
+.rd-photo--figure .rd-photo__glow { inset: 10px -70px 80px; animation: rdGlow 4.5s ease-in-out infinite; }
+.rd-photo__ground {
+  position: absolute; left: 50%; bottom: -6px; width: 128px; height: 16px; translate: -50% 0;
+  border-radius: 50%; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+[data-theme="light"] .rd-photo__ground { background: radial-gradient(closest-side, rgba(28, 25, 23, 0.22), rgba(28, 25, 23, 0)); }
+.rd-photo__fig { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+.rd-photo--figure .rd-chip--4 { bottom: 34px; }
+.rd-photo--figure:hover .rd-photo__fig { transform: none; }   /* stays planted on hover */
+.rd-about__visual:has(.rd-photo--figure) { justify-content: center; }
+
+/* ---------- LEFT MENU: sliding card highlights the current section ---------- */
+.lp-nav { position: relative; gap: 0.375rem; max-width: 220px; }
+.lp-nav__link {
+  position: relative; z-index: 1;
+  height: 46px; padding: 0 0.875rem; border-radius: 10px; gap: 0;
+}
+.lp-nav__link::before { display: none; }
+.lp-nav__link:hover { color: var(--text); }
+.lp-nav__link.active { color: var(--text); }
+.lp-nav__pill {
+  position: absolute; left: 0; top: 0; width: 100%; height: 46px; z-index: 0;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1.5px solid color-mix(in srgb, var(--border), var(--text) 12%);
+  box-shadow: inset 4px 0 0 var(--accent), 0 6px 16px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  transition: transform 380ms cubic-bezier(.65, 0, .35, 1), opacity 200ms ease;
+  pointer-events: none;
+}
+.lp-nav__pill.is-on { opacity: 1; }
+[data-theme="light"] .lp-nav__pill { box-shadow: inset 4px 0 0 var(--accent), 0 6px 16px rgba(28, 25, 23, 0.08); }
+@media (prefers-reduced-motion: reduce) { .lp-nav__pill { transition: none; } }
+
+/* ---------- FOOTER ---------- */
+.rd-footer {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1.25rem;
+  margin-top: 1rem; padding: 1.5rem 0 0.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem; color: var(--text-muted);
+}
+.rd-footer__r { display: inline-flex; align-items: center; gap: 1.25rem; }
+.rd-footer__top { color: var(--text); font-weight: 500; text-decoration: none; }
+.rd-footer__top:hover { color: var(--accent); }
+@container (max-width: 520px) { .rd-footer { flex-direction: column; align-items: flex-start; } .rd-footer__r { width: 100%; justify-content: space-between; } }
+.rd-photo--figure .rd-photo__fig { border: 0; border-radius: 0; box-shadow: none; filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.28)); }
+.rd-about__grid:has(.rd-photo--figure) { align-items: start; }
+/* character only: no glow or backdrop behind the figure in either theme */
+.rd-photo--figure .rd-photo__glow { display: none; }

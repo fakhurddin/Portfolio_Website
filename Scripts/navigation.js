@@ -1,6 +1,6 @@
 (function () {
   const navLinks = document.querySelectorAll('.lp-nav__link');
-  const sections = document.querySelectorAll('#about, #projects, #services, #experience, #contact');
+  const sections = document.querySelectorAll('#about, #products, #projects, #services, #experience, #contact');
   const rightPanel = document.querySelector('.right-panel');
 
   navLinks.forEach(function (link) {
@@ -14,6 +14,16 @@
     });
   });
 
+  // Sliding card behind the current section's link
+  const pill = document.querySelector('.lp-nav__pill');
+  function movePill(link) {
+    if (!pill) return;
+    if (!link) { pill.classList.remove('is-on'); return; }
+    pill.style.transform = 'translateY(' + link.offsetTop + 'px)';
+    pill.style.height = link.offsetHeight + 'px';
+    pill.classList.add('is-on');
+  }
+
   function setActive() {
     let currentId = '';
     sections.forEach(function (section) {
@@ -22,10 +32,14 @@
         currentId = section.id;
       }
     });
+    let activeLink = null;
     navLinks.forEach(function (link) {
       const href = link.getAttribute('href').replace('#', '');
-      link.classList.toggle('active', href === currentId);
+      const on = href === currentId;
+      link.classList.toggle('active', on);
+      if (on) activeLink = link;
     });
+    movePill(activeLink);
   }
 
   // On desktop the right panel scrolls; on mobile the window scrolls
@@ -33,5 +47,6 @@
     rightPanel.addEventListener('scroll', setActive, { passive: true });
   }
   window.addEventListener('scroll', setActive, { passive: true });
+  window.addEventListener('resize', setActive);
   setActive();
 })();
