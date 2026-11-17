@@ -61,7 +61,7 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 .rd-about__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 250px;
-  gap: 4.5rem;
+  gap: 5.5rem;
   align-items: center;
 }
 .rd-about__text { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -122,14 +122,14 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   transition: translate 450ms cubic-bezier(.2, .7, .2, 1);
 }
 /* 60% of each chip sits outside the photo, 40% over it */
-.rd-chip--l { right: 100%; translate: 40% 0; }
-.rd-chip--r { left: 100%; translate: -40% 0; }
+.rd-chip--l { right: 100%; translate: 30% 0; }   /* 30% over the photo, 70% outside */
+.rd-chip--r { left: 100%; translate: -30% 0; }
 .rd-chip--1 { top: 10px; }
 .rd-chip--2 { top: 26%; animation-delay: -1.6s; }
 .rd-chip--3 { top: 58%; animation-delay: -3.2s; }
 .rd-chip--4 { bottom: 12px; animation-delay: -4.1s; }
-.rd-photo:hover .rd-chip--l { translate: calc(40% - 8px) 0; }
-.rd-photo:hover .rd-chip--r { translate: calc(-40% + 8px) 0; }
+.rd-photo:hover .rd-chip--l { translate: calc(30% - 8px) 0; }
+.rd-photo:hover .rd-chip--r { translate: calc(-30% + 8px) 0; }
 
 .rd-chip__box { position: relative; display: inline-flex; align-items: center; }
 .rd-chip__item { display: inline-flex; align-items: center; gap: 0.45rem; white-space: nowrap; }
