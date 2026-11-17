@@ -451,3 +451,9 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 @media (max-width: 1024px) and (orientation: landscape) and (max-height: 500px) {
   .left-panel { padding-top: 2rem; }
 }
+
+/* ---------- Icon buttons: solid icons, theme switch turns on click ---------- */
+.rd-soc i { font-size: 1.125rem; line-height: 1; display: inline-block; }
+#themeIcon.is-turning { animation: rdTurn 500ms cubic-bezier(.2, .7, .2, 1); }
+@keyframes rdTurn { from { transform: rotate(-90deg) scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { #themeIcon.is-turning { animation: none; } }

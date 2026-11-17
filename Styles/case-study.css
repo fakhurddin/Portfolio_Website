@@ -176,3 +176,7 @@ p { margin: 0; }
   .cs-marq { overflow-x: auto; }
   .cs-card, .cs-shot img, .rd-tag, .cs-btn { transition: none; }
 }
+
+#themeIcon.is-turning { animation: csTurn 500ms cubic-bezier(.2, .7, .2, 1); }
+@keyframes csTurn { from { transform: rotate(-90deg) scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { #themeIcon.is-turning { animation: none; } }
