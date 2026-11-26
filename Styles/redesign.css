@@ -122,14 +122,14 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   transition: translate 450ms cubic-bezier(.2, .7, .2, 1);
 }
 /* 60% of each chip sits outside the photo, 40% over it */
-.rd-chip--l { right: 100%; translate: 30% 0; }   /* 30% over the photo, 70% outside */
-.rd-chip--r { left: 100%; translate: -30% 0; }
+.rd-chip--l { right: calc(100% - 28px); translate: 0 0; }   /* every pill starts on one vertical line, clear of the face */
+.rd-chip--r { left: calc(100% - 28px); translate: 0 0; }
 .rd-chip--1 { top: 10px; }
 .rd-chip--2 { top: 26%; animation-delay: -1.6s; }
 .rd-chip--3 { top: 58%; animation-delay: -3.2s; }
 .rd-chip--4 { bottom: 12px; animation-delay: -4.1s; }
-.rd-photo:hover .rd-chip--l { translate: calc(30% - 8px) 0; }
-.rd-photo:hover .rd-chip--r { translate: calc(-30% + 8px) 0; }
+.rd-photo:hover .rd-chip--l { translate: -4px 0; }
+.rd-photo:hover .rd-chip--r { translate: 4px 0; }
 
 .rd-chip__box { position: relative; display: inline-flex; align-items: center; }
 .rd-chip__item { display: inline-flex; align-items: center; gap: 0.45rem; white-space: nowrap; }
@@ -493,13 +493,13 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 .rd-photo--figure .rd-chip--4 { --cd: 960ms; }
 
 .rd-hi {
-  position: absolute; z-index: 3; top: -4px; left: calc(50% + 16px);
+  position: absolute; z-index: 3; top: -4px; left: calc(100% - 28px);   /* same line as the right pills */
   display: inline-flex; align-items: center; gap: 0.3rem;
-  padding: 0.3rem 0.65rem; border-radius: 999px 999px 999px 4px;
+  padding: 0.35rem 0.7rem; border-radius: 999px 999px 999px 4px;
   background: var(--surface); border: 1px solid var(--border);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   font-size: 0.75rem; font-weight: 600; line-height: 1.35; color: var(--text); text-decoration: none;
-  width: max-content; max-width: 168px;
+  width: max-content; max-width: 210px;
   opacity: 0; transform: translateY(6px) scale(0.9); transform-origin: 0 100%;
   transition: opacity 300ms ease, transform 400ms cubic-bezier(.2, .8, .2, 1.2);
   pointer-events: none;
@@ -522,4 +522,4 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 .rd-photo--figure:focus-visible .rd-photo__ground { box-shadow: 0 0 0 2px var(--accent); }
 .rd-hi:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
 .rd-hi__hand[hidden] { display: none; }
-@container (max-width: 520px) { .rd-hi { left: calc(50% + 6px); max-width: 150px; } }
+

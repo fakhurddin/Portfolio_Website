@@ -20,11 +20,15 @@
   var last = -1, hideTimer = 0;
 
   // Keep the bubble on screen: slide it left (over the shoulder) if it would overflow
+  // Keep the bubble on screen without covering the face: wrap first, nudge only if still needed
   function fit() {
     bubble.style.translate = '';
-    var right = fig.getBoundingClientRect().left + bubble.offsetLeft + bubble.offsetWidth;
-    var room = document.documentElement.clientWidth - 12;
-    if (right > room) bubble.style.translate = '-' + Math.ceil(right - room) + 'px 0';
+    bubble.style.maxWidth = '';
+    var start = fig.getBoundingClientRect().left + bubble.offsetLeft;
+    var room = document.documentElement.clientWidth - 12 - start;
+    if (bubble.offsetWidth > room) bubble.style.maxWidth = Math.max(room, 96) + 'px';
+    var over = start + bubble.offsetWidth - (document.documentElement.clientWidth - 12);
+    if (over > 0) bubble.style.translate = '-' + Math.ceil(over) + 'px 0';
   }
 
   function show(ms) {
