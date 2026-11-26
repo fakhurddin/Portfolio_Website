@@ -24,9 +24,9 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 }
 .rd-tag:hover {
   border-color: var(--b, var(--accent));
-  color: var(--b, var(--accent));
-  background-color: color-mix(in srgb, var(--b, var(--accent)) 12%, transparent);
-  transform: translateY(-2px);
+  color: var(--bt, var(--b, var(--accent)));
+  background-color: color-mix(in srgb, var(--b, var(--accent)) 14%, transparent);
+  transform: translateY(-1px);
 }
 [data-theme="light"] .rd-tag:hover {
   border-color: var(--bl, var(--accent));
@@ -458,3 +458,60 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 @keyframes rdTurn { from { transform: rotate(-90deg) scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { #themeIcon.is-turning { animation: none; } }
 .rd-soc__svg { display: block; width: 1.125rem; height: 1.125rem; }
+
+/* ---------- CONSISTENCY: buttons and cards behave the same on every page ---------- */
+.btn--primary { color: #1C1917; }
+[data-theme="light"] .btn--primary { color: #FFFFFF; }
+.card:hover { transform: none; box-shadow: none; border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
+
+/* ---------- SCROLL REVEAL: soft fade-up, once ---------- */
+.rv-on [data-reveal] {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity 600ms ease var(--rv-delay, 0ms), transform 700ms cubic-bezier(.2, .7, .2, 1) var(--rv-delay, 0ms);
+}
+.rv-on [data-reveal].is-in { opacity: 1; transform: none; }
+.rv-on .card[data-reveal].is-in { transition: opacity 600ms ease var(--rv-delay, 0ms), transform 700ms cubic-bezier(.2, .7, .2, 1) var(--rv-delay, 0ms), border-color 250ms ease; }
+
+/* ---------- CHARACTER: rises in, breathes, turns toward the pointer, says hi ---------- */
+.rd-photo--figure .rd-photo__fig {
+  transform: perspective(700px) rotateY(var(--ry, 0deg)) rotateX(var(--rx, 0deg)) scale(var(--s, 1));
+  transition: transform 500ms cubic-bezier(.2, .7, .2, 1), filter 450ms ease, opacity 700ms ease, translate 900ms cubic-bezier(.2, .7, .2, 1);
+  animation: rdBreathe 5s ease-in-out infinite;
+}
+.rd-photo--figure:hover .rd-photo__fig { --s: 1.04; transform: perspective(700px) rotateY(var(--ry, 0deg)) rotateX(var(--rx, 0deg)) scale(var(--s)); }
+@keyframes rdBreathe { 0%, 100% { scale: 1 1; } 50% { scale: 1.006 1.014; } }
+
+.rd-photo--figure.is-entering .rd-photo__fig { opacity: 0; translate: 0 22px; }
+.rd-photo--figure.is-entering .rd-photo__ground { opacity: 0; scale: 0.35 1; }
+.rd-photo--figure.is-entering .rd-chip { opacity: 0; }
+.rd-photo--figure.is-in .rd-photo__fig { opacity: 1; translate: 0 0; }
+.rd-photo--figure.is-in .rd-photo__ground { opacity: 1; scale: 1 1; transition: width 450ms cubic-bezier(.2, .7, .2, 1), opacity 700ms ease, scale 900ms cubic-bezier(.2, .7, .2, 1); }
+.rd-photo--figure.is-in .rd-chip { opacity: 1; transition: translate 450ms cubic-bezier(.2, .7, .2, 1) 0s, opacity 500ms ease var(--cd, 600ms); }
+.rd-photo--figure .rd-chip--1 { --cd: 600ms; }
+.rd-photo--figure .rd-chip--2 { --cd: 720ms; }
+.rd-photo--figure .rd-chip--3 { --cd: 840ms; }
+.rd-photo--figure .rd-chip--4 { --cd: 960ms; }
+
+.rd-hi {
+  position: absolute; z-index: 3; top: -4px; left: calc(50% + 16px);
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.3rem 0.65rem; border-radius: 999px 999px 999px 4px;
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  font-size: 0.75rem; font-weight: 600; color: var(--text); white-space: nowrap;
+  opacity: 0; transform: translateY(6px) scale(0.9); transform-origin: 0 100%;
+  transition: opacity 300ms ease, transform 400ms cubic-bezier(.2, .8, .2, 1.2);
+  pointer-events: none;
+}
+[data-theme="light"] .rd-hi { box-shadow: 0 8px 20px rgba(28, 25, 23, 0.12); }
+.rd-photo--figure.is-hi .rd-hi, .rd-photo--figure:hover .rd-hi { opacity: 1; transform: none; }
+.rd-hi__hand { display: inline-block; transform-origin: 70% 80%; }
+.rd-photo--figure.is-hi .rd-hi__hand, .rd-photo--figure:hover .rd-hi__hand { animation: rdWave 1.6s ease-in-out 1; }
+@keyframes rdWave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20%, 40% { transform: rotate(-8deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv-on [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .rd-photo--figure .rd-photo__fig { animation: none; transition: none; }
+  .rd-hi, .rd-photo--figure .rd-chip { transition: none; }
+  .rd-hi__hand { animation: none !important; }
+}
