@@ -61,7 +61,8 @@
     }, 260);
   }
 
-  function step() { swap(idx + 1 >= MESSAGES.length ? -1 : idx + 1); }
+  // "Hi!" is shown once on arrival; after that only the five messages loop
+  function step() { swap((idx + 1) % MESSAGES.length); }
 
   function start() {
     clearInterval(timer);
@@ -80,8 +81,10 @@
   }, reduce ? 0 : 1100);
 
   // Hold still while the pointer is on the bubble so it can be clicked
-  bubble.addEventListener('mouseenter', function () { paused = true; });
-  bubble.addEventListener('mouseleave', function () { paused = false; });
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    bubble.addEventListener('mouseenter', function () { paused = true; });
+    bubble.addEventListener('mouseleave', function () { paused = false; });
+  }
   function next() { step(); start(); }
 
   // Click / tap / keyboard: a new message each time
