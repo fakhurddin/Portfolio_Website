@@ -575,3 +575,12 @@ button.rd-cv { cursor: pointer; background: transparent; font-family: inherit; }
 }
 .rd-photo--figure.rd-photo--figure:focus-visible .rd-photo__fig.rd-photo__lids,
 .rd-photo--figure.rd-photo--figure.is-awake .rd-photo__fig.rd-photo__lids { opacity: 0; filter: none; }
+/* CV menu: file-type icons */
+.rd-cv-menu { min-width: 184px; padding: 5px; }
+.rd-cv-menu a { gap: 0.7rem; padding: 0.5rem 0.6rem; }
+.rd-cv-menu .rd-file { flex: none; width: 26px; height: 32.5px; display: block; filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.18)); }
+.rd-cv-menu a span { display: flex; flex-direction: column; line-height: 1.25; }
+.rd-cv-menu a b { font-size: 0.875rem; font-weight: 600; }
+.rd-cv-menu a small { font-size: 0.75rem; font-weight: 400; color: var(--text-muted); }
+.rd-cv-menu a:hover .rd-file { transform: translateY(-1px); }
+.rd-cv-menu .rd-file { transition: transform 200ms ease; }
