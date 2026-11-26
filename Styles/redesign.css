@@ -560,3 +560,18 @@ button.rd-cv { cursor: pointer; background: transparent; font-family: inherit; }
 .rd-cv-menu a { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.65rem; border-radius: 7px; font-size: 0.8125rem; font-weight: 600; color: var(--text); }
 .rd-cv-menu a i { font-size: 1rem; color: var(--accent); }
 .rd-cv-menu a:hover, .rd-cv-menu a:focus-visible { background: color-mix(in srgb, var(--accent) 12%, transparent); outline: none; }
+
+/* ---------- CHARACTER EYES: closed by default, open on hover / focus / tap ---------- */
+.rd-photo--figure .rd-photo__fig.rd-photo__lids {
+  position: absolute; left: 0; top: 0;
+  filter: none;                                     /* the open-eyes layer underneath already casts the shadow */
+  pointer-events: none;
+}
+.rd-photo--figure.is-ready .rd-photo__fig.rd-photo__lids {
+  transition: transform 500ms cubic-bezier(.2, .7, .2, 1), translate 900ms cubic-bezier(.2, .7, .2, 1), opacity 140ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .rd-photo--figure.rd-photo--figure:hover .rd-photo__fig.rd-photo__lids { opacity: 0; filter: none; }
+}
+.rd-photo--figure.rd-photo--figure:focus-visible .rd-photo__fig.rd-photo__lids,
+.rd-photo--figure.rd-photo--figure.is-awake .rd-photo__fig.rd-photo__lids { opacity: 0; filter: none; }

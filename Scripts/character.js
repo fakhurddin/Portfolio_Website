@@ -85,6 +85,17 @@
   }
   function next() { idx = (idx + 1) % MESSAGES.length; render(); show(); cycle(); }
 
+  // Eyes: closed by default, open on hover (CSS). Touch screens have no hover,
+  // so a tap opens them for 3 seconds. 'is-ready' switches to the quick blink speed after the entrance.
+  setTimeout(function () { fig.classList.add('is-ready'); }, reduce ? 0 : 1300);
+  var wakeTimer = 0;
+  fig.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse') return;
+    fig.classList.add('is-awake');
+    clearTimeout(wakeTimer);
+    wakeTimer = setTimeout(function () { fig.classList.remove('is-awake'); }, 3000);
+  });
+
   // Click / tap / keyboard: a new message each time
   fig.addEventListener('click', function (e) {
     if (e.target.closest('.rd-hi')) return;   // clicking the bubble follows its link
@@ -107,12 +118,12 @@
     dy = Math.max(-1, Math.min(1, dy));
     cancelAnimationFrame(raf);
     raf = requestAnimationFrame(function () {
-      img.style.setProperty('--ry', (dx * 10).toFixed(2) + 'deg');
-      img.style.setProperty('--rx', (-dy * 3).toFixed(2) + 'deg');
+      fig.style.setProperty('--ry', (dx * 10).toFixed(2) + 'deg');   // on the wrapper so both eye layers tilt together
+      fig.style.setProperty('--rx', (-dy * 3).toFixed(2) + 'deg');
     });
   });
   area.addEventListener('mouseleave', function () {
-    img.style.setProperty('--ry', '0deg');
-    img.style.setProperty('--rx', '0deg');
+    fig.style.setProperty('--ry', '0deg');
+    fig.style.setProperty('--rx', '0deg');
   });
 })();
