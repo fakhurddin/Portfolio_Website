@@ -530,3 +530,18 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 .rd-photo--figure .rd-chip--2 { top: 176px; }
 .rd-photo--figure .rd-chip--3 { top: 256px; }
 .rd-photo--figure .rd-chip--4 { top: 336px; bottom: auto; }
+
+/* ---------- LEFT PANEL: CV download next to the availability badge ---------- */
+.lp-badges { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin: 0 0 clamp(0.875rem, 2.2vh, 1.25rem); }
+.lp-badges .rd-status { margin: 0; }
+.rd-cv {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.3125rem 0.75rem 0.3125rem 0.625rem;
+  border: 1px solid var(--border); border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600; color: var(--text); line-height: 1.5;
+  transition: border-color 200ms ease, color 200ms ease, background-color 200ms ease;
+}
+.rd-cv i { font-size: 0.875rem; color: var(--accent); }
+.rd-cv:hover, .rd-cv:focus-visible { border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.rd-cv, .lp-badges .rd-status { height: 30px; box-sizing: border-box; }
+.rd-cv { line-height: 1; } .rd-cv i { line-height: 1; }
