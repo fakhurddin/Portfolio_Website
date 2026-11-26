@@ -592,3 +592,14 @@ button.rd-cv { cursor: pointer; background: transparent; font-family: inherit; }
 .rd-photo--figure.is-hi .rd-hi { pointer-events: auto; }
 .rd-photo.rd-photo--figure:hover .rd-chip--l,
 .rd-photo.rd-photo--figure:hover .rd-chip--r { translate: 0 0; }
+
+/* ---------- Character group: room for one-line messages ---------- */
+.rd-hi { white-space: nowrap; max-width: none; }
+@container (min-width: 521px) {
+  /* wider visual column; the character and all pills sit further left so the bubble fits beside the head */
+  .rd-about__grid:has(.rd-photo--figure) { grid-template-columns: minmax(0, 1fr) 300px; gap: 5.25rem; }
+  .rd-about__visual:has(.rd-photo--figure) { justify-content: flex-end; padding-right: 148px; }
+}
+/* not enough width beside the head: bubble sits centred just above it */
+.rd-photo--figure.hi-top .rd-hi { left: 50%; top: -46px; translate: -50% 0; border-radius: 999px; transform-origin: 50% 100%; }
+.rd-about__visual:has(.rd-photo--figure.hi-top) { padding-top: 3.25rem; }

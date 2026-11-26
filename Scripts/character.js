@@ -19,15 +19,22 @@
   var SHOW = 5000, GAP = 5000;            // each message shows 5 s, then the bubble rests 5 s
   var idx = -1, timer = 0, paused = false;
 
-  // Keep the bubble on screen without covering the face: wrap first, nudge only if still needed
+  // Messages never wrap. Beside the head (in line with the right pills) when the longest
+  // message fits there; otherwise (tablets, phones) just above the head.
+  var maxW = 0;
+  function measure() {
+    var keep = text.textContent, keepHand = hand.hidden;
+    hand.hidden = true; maxW = 0;
+    ['Hi! 👋'].concat(MESSAGES.map(function (m) { return m.t; })).forEach(function (t) {
+      text.textContent = t; maxW = Math.max(maxW, bubble.offsetWidth);
+    });
+    text.textContent = keep; hand.hidden = keepHand;
+  }
   function fit() {
-    bubble.style.translate = '';
-    bubble.style.maxWidth = '';
-    var start = fig.getBoundingClientRect().left + bubble.offsetLeft;
-    var room = document.documentElement.clientWidth - 12 - start;
-    if (bubble.offsetWidth > room) bubble.style.maxWidth = Math.max(room, 96) + 'px';
-    var over = start + bubble.offsetWidth - (document.documentElement.clientWidth - 12);
-    if (over > 0) bubble.style.translate = '-' + Math.ceil(over) + 'px 0';
+    if (!maxW) measure();
+    var r = fig.getBoundingClientRect(), vw = document.documentElement.clientWidth;
+    var besideFits = r.left + r.width - 28 + maxW <= vw - 12;
+    fig.classList.toggle('hi-top', !besideFits);
   }
 
   // idx -1 = "Hi!", 0..4 = the messages
@@ -68,6 +75,8 @@
     }, SHOW);
   }
 
+  if (bubble) fit();                      // decide bubble placement before anything shows
+
   // Entrance, first greeting, then the message cycle
   if (!reduce) {
     fig.classList.add('is-entering');
@@ -104,5 +113,5 @@
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); }
   });
 
-  window.addEventListener('resize', function () { if (fig.classList.contains('is-hi')) fit(); });
+  window.addEventListener('resize', function () { maxW = 0; fit(); });
 })();
