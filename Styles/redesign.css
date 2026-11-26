@@ -545,3 +545,5 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 .rd-cv:hover, .rd-cv:focus-visible { border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
 .rd-cv, .lp-badges .rd-status { height: 30px; box-sizing: border-box; }
 .rd-cv { line-height: 1; } .rd-cv i { line-height: 1; }
+/* contact spam traps: off-screen for people, visible to bots */
+.rd-trap { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }

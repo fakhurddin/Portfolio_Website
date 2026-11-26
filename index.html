@@ -24,6 +24,22 @@
     <link rel="icon" type="image/png" sizes="192x192" href="Images/icons/icon-192.png">
     <link rel="apple-touch-icon" href="Images/icons/apple-touch-icon.png">
     <meta name="theme-color" content="#1C1917">
+    <link rel="canonical" href="https://fakhurddin.github.io/Portfolio_Website/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Fakhurddin J.",
+      "jobTitle": "Business & Data Analyst",
+      "description": "I use data and AI tools to solve real business problems, from clear dashboards to working software.",
+      "url": "https://fakhurddin.github.io/Portfolio_Website/",
+      "image": "https://fakhurddin.github.io/Portfolio_Website/Images/og-card.jpg",
+      "email": "mailto:fakhurjunejo12@gmail.com",
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "FAST-NUCES Karachi" },
+      "knowsAbout": ["Data analysis", "Power BI", "Microsoft Excel", "SQL", "Python", "Machine learning", "Product development"],
+      "sameAs": ["https://github.com/fakhurddin", "https://www.linkedin.com/in/fakhurddin-junejo-65a127386/"]
+    }
+    </script>
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,11 +54,11 @@
     />
 
     <script>if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('rv-on');</script>
-    <link rel="stylesheet" href="Styles/main.css?v=20261126e">
-    <link rel="stylesheet" href="Styles/project.css?v=20261126e">
-    <link rel="stylesheet" href="Styles/contact.css?v=20261126e">
-    <link rel="stylesheet" href="Styles/redesign.css?v=20261126e">
-    <link rel="stylesheet" href="Styles/tailwind.css?v=20261126e">
+    <link rel="stylesheet" href="Styles/main.css?v=20261126f">
+    <link rel="stylesheet" href="Styles/project.css?v=20261126f">
+    <link rel="stylesheet" href="Styles/contact.css?v=20261126f">
+    <link rel="stylesheet" href="Styles/redesign.css?v=20261126f">
+    <link rel="stylesheet" href="Styles/tailwind.css?v=20261126f">
 
   </head>
 
@@ -219,23 +235,26 @@
               <input type="hidden" name="access_key" value="1e8d486d-2b64-4c6b-8b37-dcbbda2f9ccf">
               <input type="hidden" name="subject" value="New Contact from Website">
               <input type="hidden" name="redirect" value="#contact">
+              <!-- spam traps: real visitors never see or fill these -->
+              <input type="checkbox" name="botcheck" class="rd-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="rd-trap" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
 
               <div class="rd-contact__row">
                 <div class="rd-field">
                   <label for="name">Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+                  <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" maxlength="80" />
                   <p class="text-[#E06C6C] text-sm mt-1 hidden" id="nameError">Please fill in this field.</p>
                 </div>
                 <div class="rd-field">
                   <label for="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" />
+                  <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" maxlength="120" />
                   <p class="text-[#E06C6C] text-sm mt-1 hidden" id="emailError">Please enter a valid email.</p>
                 </div>
               </div>
 
               <div class="rd-field">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" placeholder="What are you building, and how can I help?"></textarea>
+                <textarea id="message" name="message" rows="4" maxlength="3000" placeholder="What are you building, and how can I help?"></textarea>
                 <p class="text-[#E06C6C] text-sm mt-1 hidden" id="messageError">Please enter a message.</p>
               </div>
 
@@ -275,12 +294,12 @@
       </main>
     </div>
 
-    <script src="Scripts/theme.js?v=20261126e"></script>
-    <script src="Scripts/navigation.js?v=20261126e"></script>
-    <script src="Scripts/contact.js?v=20261126e"></script>
-    <script src="Scripts/cursor.js?v=20261126e"></script>
-    <script src="Scripts/projects.js?v=20261126e"></script>
-    <script src="Scripts/reveal.js?v=20261126e"></script>
-    <script src="Scripts/character.js?v=20261126e"></script>
+    <script src="Scripts/theme.js?v=20261126f"></script>
+    <script src="Scripts/navigation.js?v=20261126f"></script>
+    <script src="Scripts/contact.js?v=20261126f"></script>
+    <script src="Scripts/cursor.js?v=20261126f"></script>
+    <script src="Scripts/projects.js?v=20261126f"></script>
+    <script src="Scripts/reveal.js?v=20261126f"></script>
+    <script src="Scripts/character.js?v=20261126f"></script>
   </body>
 </html>

@@ -2,6 +2,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
+  // ---- spam protection ----
+  const loadedAt = Date.now();
+  const LIMIT = 3, WINDOW = 10 * 60 * 1000;          // at most 3 messages per 10 minutes per browser
+  function recentSends() {
+    try { return JSON.parse(localStorage.getItem('contactSends') || '[]').filter(t => Date.now() - t < WINDOW); }
+    catch (e) { return []; }
+  }
+  function rememberSend() {
+    try { localStorage.setItem('contactSends', JSON.stringify(recentSends().concat(Date.now()))); } catch (e) {}
+  }
+  function showSent() {
+    form.reset();
+    const sent = document.getElementById('contactSent');
+    if (sent) { form.hidden = true; sent.hidden = false; }
+  }
+  let sending = false;
+
   // Reusable function to show validation error with fade-out
   function showError(inputElem, errorId, message) {
     const errorElem = document.getElementById(errorId);
@@ -16,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         errorElem.classList.remove('fade-out');
       }, 600);
       inputElem.classList.remove('border-red-500');
-    }, 1000);
+    }, 3000);
   }
 
   // "Send another message" brings the form back
@@ -32,6 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Handle form submission and validation
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
+    if (sending) return;
+
+    // Bots fill hidden fields or submit instantly: pretend success, send nothing
+    const trapped = form.querySelector('#website')?.value || form.querySelector('[name="botcheck"]')?.checked;
+    if (trapped || Date.now() - loadedAt < 3000) { showSent(); return; }
 
     const name = form.querySelector('#name');
     const email = form.querySelector('#email');
@@ -56,14 +78,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Validate Message
-    if (!message.value.trim()) {
+    const text = message.value.trim();
+    const links = (text.match(/https?:\/\/|www\./gi) || []).length;
+    if (!text) {
       showError(message, 'messageError', 'Please enter a message.');
+      isValid = false;
+    } else if (text.length < 10) {
+      showError(message, 'messageError', 'Please write a little more (at least 10 characters).');
+      isValid = false;
+    } else if (links > 2) {
+      showError(message, 'messageError', 'Please include no more than 2 links.');
+      isValid = false;
+    }
+
+    if (isValid && recentSends().length >= LIMIT) {
+      showError(message, 'messageError', 'You have sent a few messages already. Please try again in a few minutes.');
       isValid = false;
     }
 
     if (!isValid) return;
 
     // Show loading state
+    sending = true;
+    submitBtn.disabled = true;
     const originalContent = submitBtn.innerHTML;
     submitBtn.innerHTML = `
       <i class="ri-loader-4-line ri-lg mr-2 animate-spin"></i>
@@ -74,6 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Prepare data and submit to Web3Forms
       const formData = new FormData(form);
+      formData.delete('website');
+      formData.delete('redirect');
+      if (!form.querySelector('[name="botcheck"]').checked) formData.delete('botcheck');
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -86,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const result = await response.json();
 
       if (result.success) {
+        rememberSend();
         submitBtn.innerHTML = `
           <i class="ri-check-line ri-lg mr-2"></i>
           Message Sent!
@@ -114,6 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
         Failed to Send
       `;
     } finally {
+      sending = false;
+      submitBtn.disabled = false;
       setTimeout(() => {
         submitBtn.innerHTML = originalContent;
         submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
