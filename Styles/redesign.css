@@ -598,4 +598,5 @@ button.rd-cv { cursor: pointer; background: transparent; font-family: inherit; }
 /* side-by-side layout: JS centres the character group between the About text and the screen edge */
 /* not enough width beside the head: bubble sits centred just above it */
 .rd-photo--figure.hi-top .rd-hi { left: 50%; top: -46px; translate: -50% 0; border-radius: 999px; transform-origin: 50% 100%; }
-.rd-about__visual:has(.rd-photo--figure.hi-top) { padding-top: 3.25rem; }
+/* only the stacked (phone) layout needs extra room above the head; side by side, the bubble uses the empty space beside the "About" heading */
+@container (max-width: 520px) { .rd-about__visual:has(.rd-photo--figure.hi-top) { padding-top: 3.25rem; } }
