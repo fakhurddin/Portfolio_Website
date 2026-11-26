@@ -523,3 +523,5 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 .rd-hi:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
 .rd-hi__hand[hidden] { display: none; }
 
+/* bubble text swaps softly while it rotates */
+.rd-photo--figure.is-hi .rd-hi.is-swap { opacity: 0; transform: translateY(3px) scale(0.97); transition: opacity 240ms ease, transform 240ms ease; }

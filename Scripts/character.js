@@ -17,9 +17,9 @@
     { t: 'Curious about SabKi Sawari? 🚐', href: 'work/sabki-sawari/' },
     { t: 'Try my churn demo 🔮', href: 'https://telcochurnprediction-rphdf9uthz5k9pwdtai8y8.streamlit.app/', ext: true }
   ];
-  var last = -1, hideTimer = 0;
+  var STEP = 3000;                       // same rhythm as the side pills
+  var idx = -1, timer = 0, paused = false;
 
-  // Keep the bubble on screen: slide it left (over the shoulder) if it would overflow
   // Keep the bubble on screen without covering the face: wrap first, nudge only if still needed
   function fit() {
     bubble.style.translate = '';
@@ -31,47 +31,58 @@
     if (over > 0) bubble.style.translate = '-' + Math.ceil(over) + 'px 0';
   }
 
-  function show(ms) {
+  // idx -1 = "Hi!", 0..4 = the messages
+  function render() {
+    if (idx < 0) {
+      text.textContent = 'Hi!';
+      hand.hidden = false;
+      bubble.setAttribute('href', '#about');
+      bubble.removeAttribute('target'); bubble.removeAttribute('rel');
+      fig.classList.add('is-greeting');
+    } else {
+      var m = MESSAGES[idx];
+      text.textContent = m.t;
+      hand.hidden = true;
+      fig.classList.remove('is-greeting');
+      bubble.setAttribute('href', m.href);
+      if (m.ext) { bubble.setAttribute('target', '_blank'); bubble.setAttribute('rel', 'noopener noreferrer'); }
+      else { bubble.removeAttribute('target'); bubble.removeAttribute('rel'); }
+    }
     fit();
-    fig.classList.remove('is-hi');
-    void bubble.offsetWidth;            // restart the pop animation
-    fig.classList.add('is-hi');
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(function () { fig.classList.remove('is-hi'); }, ms);
   }
 
-  function sayHi(ms) {
-    text.textContent = 'Hi!';
-    hand.hidden = false;
-    bubble.setAttribute('href', '#about');
-    bubble.removeAttribute('target');
-    bubble.removeAttribute('rel');
-    fig.classList.add('is-greeting');
-    show(ms);
+  function swap(to) {
+    if (reduce) { idx = to; render(); return; }
+    bubble.classList.add('is-swap');                     // soft fade out
+    setTimeout(function () {
+      idx = to; render();
+      fig.classList.remove('is-hi'); void bubble.offsetWidth; fig.classList.add('is-hi');   // replay wave/pop
+      bubble.classList.remove('is-swap');                // fade back in
+    }, 260);
   }
 
-  function next() {
-    var i;
-    do { i = Math.floor(Math.random() * MESSAGES.length); } while (i === last && MESSAGES.length > 1);
-    last = i;
-    var m = MESSAGES[i];
-    text.textContent = m.t;
-    hand.hidden = true;
-    fig.classList.remove('is-greeting');
-    bubble.setAttribute('href', m.href);
-    if (m.ext) { bubble.setAttribute('target', '_blank'); bubble.setAttribute('rel', 'noopener noreferrer'); }
-    else { bubble.removeAttribute('target'); bubble.removeAttribute('rel'); }
-    show(3500);
+  function step() { swap(idx + 1 >= MESSAGES.length ? -1 : idx + 1); }
+
+  function start() {
+    clearInterval(timer);
+    timer = setInterval(function () { if (!paused && !document.hidden) step(); }, STEP);
   }
 
-  // Entrance + first greeting
+  // Entrance, first greeting, then rotate on its own
   if (!reduce) {
     fig.classList.add('is-entering');
     requestAnimationFrame(function () {
       requestAnimationFrame(function () { fig.classList.add('is-in'); });
     });
   }
-  if (bubble) setTimeout(function () { sayHi(4000); }, reduce ? 0 : 1100);
+  if (bubble) setTimeout(function () {
+    idx = -1; render(); fig.classList.add('is-hi'); start();
+  }, reduce ? 0 : 1100);
+
+  // Hold still while the pointer is on the bubble so it can be clicked
+  bubble.addEventListener('mouseenter', function () { paused = true; });
+  bubble.addEventListener('mouseleave', function () { paused = false; });
+  function next() { step(); start(); }
 
   // Click / tap / keyboard: a new message each time
   fig.addEventListener('click', function (e) {
