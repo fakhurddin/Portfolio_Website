@@ -180,3 +180,9 @@ p { margin: 0; }
 #themeIcon.is-turning { animation: csTurn 500ms cubic-bezier(.2, .7, .2, 1); }
 @keyframes csTurn { from { transform: rotate(-90deg) scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { #themeIcon.is-turning { animation: none; } }
+
+/* expanded case studies: step numbers, before/now labels, calm cards */
+.cs-n { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; font-weight: 500; color: var(--accent); margin-right: 0.5rem; }
+.cs-card p b { color: var(--text); font-weight: 600; }
+.cs-card p + p { margin-top: 0.35rem; }
+.cs-card:hover { transform: none; }
