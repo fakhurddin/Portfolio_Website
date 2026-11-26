@@ -595,11 +595,7 @@ button.rd-cv { cursor: pointer; background: transparent; font-family: inherit; }
 
 /* ---------- Character group: room for one-line messages ---------- */
 .rd-hi { white-space: nowrap; max-width: none; }
-@container (min-width: 521px) {
-  /* wider visual column; the character and all pills sit further left so the bubble fits beside the head */
-  .rd-about__grid:has(.rd-photo--figure) { grid-template-columns: minmax(0, 1fr) 300px; gap: 5.25rem; }
-  .rd-about__visual:has(.rd-photo--figure) { justify-content: flex-end; padding-right: 148px; }
-}
+/* side-by-side layout: JS centres the character group between the About text and the screen edge */
 /* not enough width beside the head: bubble sits centred just above it */
 .rd-photo--figure.hi-top .rd-hi { left: 50%; top: -46px; translate: -50% 0; border-radius: 999px; transform-origin: 50% 100%; }
 .rd-about__visual:has(.rd-photo--figure.hi-top) { padding-top: 3.25rem; }

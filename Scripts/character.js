@@ -30,6 +30,25 @@
     });
     text.textContent = keep; hand.hidden = keepHand;
   }
+  // Centre the character group in the space between the About text and the screen edge
+  var textEl = document.querySelector('.rd-about__text');
+  var gridEl = document.querySelector('.rd-about__grid');
+  function centre() {
+    fig.style.left = '0px';
+    if (!textEl || !gridEl) return;
+    var sideBySide = getComputedStyle(gridEl).gridTemplateColumns.split(' ').length > 1;
+    if (!sideBySide) return;                       // phones / stacked layout: already centred
+    var vw = document.documentElement.clientWidth;
+    var r = fig.getBoundingClientRect();
+    var target = (textEl.getBoundingClientRect().right + vw) / 2;
+    var shift = target - (r.left + r.width / 2);
+    // keep every side pill on screen
+    var chipsR = 0;
+    fig.querySelectorAll('.rd-chip').forEach(function (c) { chipsR = Math.max(chipsR, c.getBoundingClientRect().right); });
+    shift = Math.min(shift, vw - 12 - chipsR);
+    fig.style.left = Math.round(shift) + 'px';
+  }
+
   function fit() {
     if (!maxW) measure();
     var r = fig.getBoundingClientRect(), vw = document.documentElement.clientWidth;
@@ -75,7 +94,9 @@
     }, SHOW);
   }
 
+  centre();
   if (bubble) fit();                      // decide bubble placement before anything shows
+  window.addEventListener('load', function () { centre(); maxW = 0; fit(); });   // after fonts settle
 
   // Entrance, first greeting, then the message cycle
   if (!reduce) {
@@ -113,5 +134,5 @@
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); }
   });
 
-  window.addEventListener('resize', function () { maxW = 0; fit(); });
+  window.addEventListener('resize', function () { centre(); maxW = 0; fit(); });
 })();
