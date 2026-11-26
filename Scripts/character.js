@@ -1,12 +1,11 @@
-/* About character: rises in, says hi, shows a random message on each click,
-   and turns slightly toward the pointer on desktop. */
+/* About character: rises in, says hi, cycles short messages,
+   and opens his eyes with a smile when hovered (CSS). */
 (function () {
   var fig = document.querySelector('.rd-photo--figure');
   if (!fig) return;
   var bubble = fig.querySelector('.rd-hi');
   var text = bubble && bubble.querySelector('.rd-hi__text');
   var hand = bubble && bubble.querySelector('.rd-hi__hand');
-  var img = fig.querySelector('.rd-photo__fig');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Messages shown on click. Clicking the bubble takes the visitor there.
@@ -105,25 +104,5 @@
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); }
   });
 
-  // Pointer turn (mouse / trackpad only)
   window.addEventListener('resize', function () { if (fig.classList.contains('is-hi')) fit(); });
-  if (reduce || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  var area = document.getElementById('about') || fig;
-  var raf = 0;
-  area.addEventListener('mousemove', function (e) {
-    var r = fig.getBoundingClientRect();
-    var dx = (e.clientX - (r.left + r.width / 2)) / Math.max(window.innerWidth / 2, 1);
-    var dy = (e.clientY - (r.top + r.height * 0.3)) / Math.max(window.innerHeight / 2, 1);
-    dx = Math.max(-1, Math.min(1, dx));
-    dy = Math.max(-1, Math.min(1, dy));
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(function () {
-      fig.style.setProperty('--ry', (dx * 10).toFixed(2) + 'deg');   // on the wrapper so both eye layers tilt together
-      fig.style.setProperty('--rx', (-dy * 3).toFixed(2) + 'deg');
-    });
-  });
-  area.addEventListener('mouseleave', function () {
-    fig.style.setProperty('--ry', '0deg');
-    fig.style.setProperty('--rx', '0deg');
-  });
 })();

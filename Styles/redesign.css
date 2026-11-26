@@ -584,3 +584,11 @@ button.rd-cv { cursor: pointer; background: transparent; font-family: inherit; }
 .rd-cv-menu a small { font-size: 0.75rem; font-weight: 400; color: var(--text-muted); }
 .rd-cv-menu a:hover .rd-file { transform: translateY(-1px); }
 .rd-cv-menu .rd-file { transition: transform 200ms ease; }
+
+/* Hover belongs to the character himself: one effect only (eyes open, smile, slight grow).
+   The pills and empty space around him no longer trigger it, and the pills stay still. */
+.rd-photo--figure { pointer-events: none; }
+.rd-photo--figure .rd-photo__fig:not(.rd-photo__lids) { pointer-events: auto; }
+.rd-photo--figure.is-hi .rd-hi { pointer-events: auto; }
+.rd-photo.rd-photo--figure:hover .rd-chip--l,
+.rd-photo.rd-photo--figure:hover .rd-chip--r { translate: 0 0; }
