@@ -1,7 +1,13 @@
 (function () {
   const navLinks = document.querySelectorAll('.lp-nav__link');
-  const sections = document.querySelectorAll('#about, #products, #projects, #services, #experience, #contact');
+  const sections = document.querySelectorAll('#about, #products, #projects, #skills, #experience, #contact');
   const rightPanel = document.querySelector('.right-panel');
+
+  let lockId = '';
+  // The visitor scrolling by hand ends the click highlight
+  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) {
+    window.addEventListener(ev, function () { lockId = ''; }, { passive: true });
+  });
 
   navLinks.forEach(function (link) {
     link.addEventListener('click', function (e) {
@@ -9,7 +15,9 @@
       const target = document.querySelector(targetId);
       if (!target) return;
       e.preventDefault();
+      lockId = targetId.slice(1);                  // keep the clicked item highlighted
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActive();
       history.pushState(null, '', targetId);
     });
   });
@@ -26,12 +34,18 @@
 
   function setActive() {
     let currentId = '';
+    // A section becomes current once its top passes a line near the top of the screen,
+    // so short sections (like Skills) still get their turn.
+    const line = Math.max(120, window.innerHeight * 0.25);
     sections.forEach(function (section) {
-      const top = section.getBoundingClientRect().top;
-      if (top <= window.innerHeight * 0.4) {
-        currentId = section.id;
-      }
+      if (section.getBoundingClientRect().top <= line) currentId = section.id;
     });
+    // At the very bottom, the last section (Contact) is current even if it is short
+    const doc = document.documentElement;
+    if (window.innerHeight + window.scrollY >= doc.scrollHeight - 4 && sections.length) {
+      currentId = sections[sections.length - 1].id;
+    }
+    if (lockId) currentId = lockId;
     let activeLink = null;
     navLinks.forEach(function (link) {
       const href = link.getAttribute('href').replace('#', '');
@@ -62,3 +76,9 @@
     if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   });
 })();
+
+// Old links to #services now open the Skills section
+if (location.hash === '#services') {
+  history.replaceState(null, '', location.pathname + location.search + '#skills');
+  var sk = document.getElementById('skills'); if (sk) sk.scrollIntoView();
+}
