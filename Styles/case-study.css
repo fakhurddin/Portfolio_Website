@@ -251,3 +251,63 @@ p { margin: 0; }
   .cs-ba__arrow i { transform: rotate(90deg); font-size: 1rem; }
 }
 .cs-ba__head { padding: 0 calc(0.75rem + 1px); }
+
+/* ---------- UNIFIED SECTION DESIGN (matches Before and after + How it works) ---------- */
+.cs-section { --bad: #F0686B; --good: var(--success); --warm: #F5A524; }
+[data-theme="light"] .cs-section { --bad: #C93B3F; --warm: #B45309; }
+
+/* icon tile */
+.cs-ic { flex: none; width: 2.25rem; height: 2.25rem; border-radius: 10px; display: grid; place-items: center;
+  background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); font-size: 1.15rem; }
+.cs-ic--sm { width: 1.85rem; height: 1.85rem; border-radius: 8px; font-size: 1rem; }
+
+/* panel that holds a group (like the How it works box) */
+.cs-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 0.75rem; }
+
+/* tinted cells with a coloured edge (like Before / After) */
+.cs-cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; }
+.cs-cell { --tone: var(--accent); border-radius: 10px; padding: 0.8rem 0.95rem; border-left: 3px solid var(--tone);
+  background: color-mix(in srgb, var(--tone) 10%, transparent); font-size: 0.9rem; line-height: 1.6; }
+.cs-cell p { margin: 0; color: var(--text); }
+.cs-cell--bad { --tone: var(--bad); }
+.cs-cell--good { --tone: var(--good); }
+.cs-cell--warm { --tone: var(--warm); }
+.cs-cell__tag { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem; color: var(--tone);
+  font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.cs-cell__tag i { font-size: 0.95rem; }
+
+/* feature tiles */
+.cs-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.1rem;
+  display: flex; flex-direction: column; gap: 0.6rem; transition: border-color 200ms ease; }
+.cs-tile:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
+.cs-tile__head { display: flex; align-items: center; gap: 0.7rem; }
+.cs-tile__head h3 { font-size: 0.9875rem; font-weight: 600; line-height: 1.3; margin: 0; }
+.cs-tile p { margin: 0; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); }
+.rv-on .cs-tile[data-reveal].is-in, .rv-on .cs-row[data-reveal].is-in, .rv-on .cs-cell[data-reveal].is-in {
+  transition: opacity 600ms ease var(--rv-delay, 0ms), transform 700ms cubic-bezier(.2, .7, .2, 1) var(--rv-delay, 0ms), border-color 200ms ease; }
+
+/* rows (like Before / After) */
+.cs-rows { display: flex; flex-direction: column; gap: 0.75rem; }
+.cs-row { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 0.75rem; align-items: stretch;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 0.75rem; transition: border-color 200ms ease; }
+.cs-row:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
+.cs-row__who { display: flex; align-items: center; gap: 0.65rem; padding: 0.25rem 0.25rem 0.25rem 0.35rem; }
+.cs-row__who h3 { font-size: 0.9375rem; font-weight: 600; line-height: 1.3; margin: 0; }
+.cs-row .cs-cell { display: flex; align-items: center; }
+
+/* numbered steps inside a flow (How it was built) */
+.cs-step--num { gap: 0.45rem; padding: 0.85rem 0.95rem; }
+.cs-step__top { display: flex; align-items: center; justify-content: space-between; }
+.cs-step--num .cs-n { margin: 0; }
+.cs-step--num b { font-size: 0.9375rem; }
+.cs-step--num > span:last-child { font-size: 0.84rem; }
+
+/* tech stack panel */
+.cs-panel--stack { display: flex; align-items: center; gap: 0.9rem; padding: 0.9rem 1rem; }
+.cs-panel--stack .cs-tags { margin: 0; }
+
+@media (max-width: 760px) {
+  .cs-cells { grid-template-columns: 1fr; }
+  .cs-row { grid-template-columns: 1fr; gap: 0.5rem; padding: 0.85rem; }
+  .cs-panel--stack { align-items: flex-start; }
+}
