@@ -17,7 +17,7 @@
     { t: 'Curious about SabKi Sawari? 🚐', href: 'work/sabki-sawari/' },
     { t: 'Try my churn demo 🔮', href: 'https://telcochurnprediction-rphdf9uthz5k9pwdtai8y8.streamlit.app/', ext: true }
   ];
-  var STEP = 3000;                       // same rhythm as the side pills
+  var SHOW = 5000, GAP = 5000;            // each message shows 5 s, then the bubble rests 5 s
   var idx = -1, timer = 0, paused = false;
 
   // Keep the bubble on screen without covering the face: wrap first, nudge only if still needed
@@ -51,41 +51,39 @@
     fit();
   }
 
-  function swap(to) {
-    if (reduce) { idx = to; render(); return; }
-    bubble.classList.add('is-swap');                     // soft fade out
-    setTimeout(function () {
-      idx = to; render();
-      fig.classList.remove('is-hi'); void bubble.offsetWidth; fig.classList.add('is-hi');   // replay wave/pop
-      bubble.classList.remove('is-swap');                // fade back in
-    }, 260);
+  function show() {
+    fit();
+    fig.classList.remove('is-hi'); void bubble.offsetWidth; fig.classList.add('is-hi');   // pop in (+ wave on Hi)
   }
 
-  // "Hi!" is shown once on arrival; after that only the five messages loop
-  function step() { swap((idx + 1) % MESSAGES.length); }
-
-  function start() {
-    clearInterval(timer);
-    timer = setInterval(function () { if (!paused && !document.hidden) step(); }, STEP);
+  // visible SHOW ms -> hidden GAP ms -> next message ... ("Hi!" only once, on arrival)
+  function cycle() {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      if (paused) { cycle(); return; }               // keep it up while the pointer is on it
+      fig.classList.remove('is-hi');
+      timer = setTimeout(function () {
+        idx = (idx + 1) % MESSAGES.length;
+        render(); show(); cycle();
+      }, GAP);
+    }, SHOW);
   }
 
-  // Entrance, first greeting, then rotate on its own
+  // Entrance, first greeting, then the message cycle
   if (!reduce) {
     fig.classList.add('is-entering');
     requestAnimationFrame(function () {
       requestAnimationFrame(function () { fig.classList.add('is-in'); });
     });
   }
-  if (bubble) setTimeout(function () {
-    idx = -1; render(); fig.classList.add('is-hi'); start();
-  }, reduce ? 0 : 1100);
+  if (bubble) setTimeout(function () { idx = -1; render(); show(); cycle(); }, reduce ? 0 : 1100);
 
   // Hold still while the pointer is on the bubble so it can be clicked
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     bubble.addEventListener('mouseenter', function () { paused = true; });
     bubble.addEventListener('mouseleave', function () { paused = false; });
   }
-  function next() { step(); start(); }
+  function next() { idx = (idx + 1) % MESSAGES.length; render(); show(); cycle(); }
 
   // Click / tap / keyboard: a new message each time
   fig.addEventListener('click', function (e) {

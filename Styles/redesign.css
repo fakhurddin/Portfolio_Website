@@ -525,3 +525,8 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 
 /* bubble text swaps softly while it rotates */
 .rd-photo--figure.is-hi .rd-hi.is-swap { opacity: 0; transform: translateY(3px) scale(0.97); transition: opacity 240ms ease, transform 240ms ease; }
+/* side pills on an even 80px rhythm: left/right pairs share the same 160px gap; top-right bubble unchanged */
+.rd-photo--figure .rd-chip--1 { top: 96px; }
+.rd-photo--figure .rd-chip--2 { top: 176px; }
+.rd-photo--figure .rd-chip--3 { top: 256px; }
+.rd-photo--figure .rd-chip--4 { top: 336px; bottom: auto; }
