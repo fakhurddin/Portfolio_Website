@@ -50,3 +50,15 @@
   window.addEventListener('resize', setActive);
   setActive();
 })();
+
+// Name in the left panel: smooth scroll back to the top and clear the #section from the address
+(function () {
+  var link = document.getElementById('nameTop');
+  if (!link) return;
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  });
+})();
