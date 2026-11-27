@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Bots fill hidden fields or submit instantly: pretend success, send nothing
     const trapped = form.querySelector('#website')?.value || form.querySelector('[name="botcheck"]')?.checked;
-    if (trapped || Date.now() - loadedAt < 3000) { showSent(); return; }
+    if (trapped || Date.now() - loadedAt < 1200) { showSent(); return; }
 
     const name = form.querySelector('#name');
     const email = form.querySelector('#email');
@@ -154,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <i class="ri-close-line ri-lg mr-2"></i>
         Failed to Send
       `;
+      showError(message, 'messageError', 'Could not send message. Please email fakhurjunejo12@gmail.com or book a call.');
     } finally {
       sending = false;
       submitBtn.disabled = false;
