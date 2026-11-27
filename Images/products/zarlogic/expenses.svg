@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 504" width="840" height="504" style="background:#0F172A; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14243A" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#172234" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top App Bar -->
+  <rect x="0" y="0" width="840" height="46" fill="#14243A" stroke="#334155" stroke-width="1"/>
+  <rect x="20" y="11" width="24" height="24" rx="6" fill="#059669"/>
+  <path d="M32 17v12 M28 21l4-4 4 4" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="52" y="27" fill="#F8FAFC" font-size="14" font-weight="700" letter-spacing="-0.01em">ZarLogic</text>
+  <text x="114" y="27" fill="#64748B" font-size="12">|</text>
+  <text x="124" y="27" fill="#94A3B8" font-size="12" font-weight="500">Expense Responsibility & Payer Engine</text>
+
+  <!-- Status / Pill -->
+  <rect x="670" y="12" width="90" height="22" rx="11" fill="#064E3B" stroke="#059669" stroke-width="1"/>
+  <circle cx="682" cy="23" r="3.5" fill="#10B981"/>
+  <text x="692" y="27" fill="#34D399" font-size="10.5" font-weight="600">60:40 Split</text>
+  <rect x="770" y="12" width="50" height="22" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="795" y="27" text-anchor="middle" fill="#CBD5E1" font-size="10.5" font-weight="600">EN · سنڌي</text>
+
+  <!-- Canvas -->
+  <g transform="translate(24, 62)">
+    
+  <rect x="0" y="0" width="792" height="414" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <text x="20" y="32" fill="#F8FAFC" font-size="15" font-weight="600">Expense Responsibility Ratios vs. Physical Payer Attribution</text>
+  <text x="20" y="52" fill="#94A3B8" font-size="12">Owner and Labor responsibility percentages must total 100%. Payer identity is tracked independently without silent netting.</text>
+
+  <g transform="translate(20, 72)" font-size="11">
+    <rect x="0" y="0" width="752" height="28" rx="4" fill="#0F172A"/>
+    <text x="14" y="18" fill="#64748B" font-weight="600">DATE</text>
+    <text x="90" y="18" fill="#64748B" font-weight="600">CATEGORY</text>
+    <text x="210" y="18" fill="#64748B" font-weight="600">TOTAL AMOUNT</text>
+    <text x="340" y="18" fill="#64748B" font-weight="600">OWNER / LABOR SPLIT</text>
+    <text x="500" y="18" fill="#64748B" font-weight="600">ACTUAL PAYER</text>
+    <text x="640" y="18" fill="#64748B" font-weight="600">ALLOCATION</text>
+
+    <line x1="0" y1="36" x2="752" y2="36" stroke="#334155" stroke-width="1"/>
+    <text x="14" y="58" fill="#CBD5E1">12 Oct 2026</text>
+    <text x="90" y="58" fill="#F8FAFC" font-weight="600">Diesel / Tractor</text>
+    <text x="210" y="58" fill="#F8FAFC" font-weight="600">PKR 45,000</text>
+    <text x="340" y="58" fill="#60A5FA" font-family="monospace">60% Owner / 40% Labor</text>
+    <text x="500" y="58" fill="#34D399">Owner (Direct Cash)</text>
+    <text x="640" y="58" fill="#CBD5E1">Field 1</text>
+
+    <line x1="0" y1="76" x2="752" y2="76" stroke="#334155" stroke-width="1"/>
+    <text x="14" y="98" fill="#CBD5E1">16 Oct 2026</text>
+    <text x="90" y="98" fill="#F8FAFC" font-weight="600">Pesticide Spray</text>
+    <text x="210" y="98" fill="#F8FAFC" font-weight="600">PKR 28,000</text>
+    <text x="340" y="98" fill="#60A5FA" font-family="monospace">50% Owner / 50% Labor</text>
+    <text x="500" y="98" fill="#FBBF24">Labor: Ghulam Ali</text>
+    <text x="640" y="98" fill="#CBD5E1">Field 1</text>
+
+    <line x1="0" y1="116" x2="752" y2="116" stroke="#334155" stroke-width="1"/>
+    <text x="14" y="138" fill="#CBD5E1">22 Oct 2026</text>
+    <text x="90" y="138" fill="#F8FAFC" font-weight="600">Tube-well Electricity</text>
+    <text x="210" y="138" fill="#F8FAFC" font-weight="600">PKR 62,000</text>
+    <text x="340" y="138" fill="#60A5FA" font-family="monospace">100% Owner / 0% Labor</text>
+    <text x="500" y="138" fill="#34D399">Owner (Bank Pay)</text>
+    <text x="640" y="138" fill="#CBD5E1">Block B</text>
+  </g>
+
+  </g>
+</svg>

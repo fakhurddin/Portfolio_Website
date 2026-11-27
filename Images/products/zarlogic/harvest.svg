@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 504" width="840" height="504" style="background:#0F172A; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14243A" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#172234" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top App Bar -->
+  <rect x="0" y="0" width="840" height="46" fill="#14243A" stroke="#334155" stroke-width="1"/>
+  <rect x="20" y="11" width="24" height="24" rx="6" fill="#059669"/>
+  <path d="M32 17v12 M28 21l4-4 4 4" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="52" y="27" fill="#F8FAFC" font-size="14" font-weight="700" letter-spacing="-0.01em">ZarLogic</text>
+  <text x="114" y="27" fill="#64748B" font-size="12">|</text>
+  <text x="124" y="27" fill="#94A3B8" font-size="12" font-weight="500">Harvest Logging & Whole-Harvest Sales</text>
+
+  <!-- Status / Pill -->
+  <rect x="670" y="12" width="90" height="22" rx="11" fill="#064E3B" stroke="#059669" stroke-width="1"/>
+  <circle cx="682" cy="23" r="3.5" fill="#10B981"/>
+  <text x="692" y="27" fill="#34D399" font-size="10.5" font-weight="600">Sales & Receipts</text>
+  <rect x="770" y="12" width="50" height="22" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="795" y="27" text-anchor="middle" fill="#CBD5E1" font-size="10.5" font-weight="600">EN · سنڌي</text>
+
+  <!-- Canvas -->
+  <g transform="translate(24, 62)">
+    
+  <rect x="0" y="0" width="792" height="414" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <text x="20" y="32" fill="#F8FAFC" font-size="15" font-weight="600">Whole Harvest Sales &amp; Multi-Part Receipts</text>
+  <text x="20" y="52" fill="#94A3B8" font-size="12">1 Maund = 40 KG in normalized derived views. Outstanding balance is derived dynamically from sales minus valid receipts.</text>
+
+  <g transform="translate(20, 72)" font-size="11">
+    <rect x="0" y="0" width="752" height="28" rx="4" fill="#0F172A"/>
+    <text x="14" y="18" fill="#64748B" font-weight="600">HARVEST ID</text>
+    <text x="110" y="18" fill="#64748B" font-weight="600">CROP / FIELD</text>
+    <text x="240" y="18" fill="#64748B" font-weight="600">QUANTITY</text>
+    <text x="360" y="18" fill="#64748B" font-weight="600">BUYER</text>
+    <text x="490" y="18" fill="#64748B" font-weight="600">SALE TOTAL</text>
+    <text x="620" y="18" fill="#64748B" font-weight="600">RECEIPTS / STATUS</text>
+
+    <line x1="0" y1="36" x2="752" y2="36" stroke="#334155" stroke-width="1"/>
+    <text x="14" y="58" fill="#94A3B8" font-family="monospace">#HRV-2026-01</text>
+    <text x="110" y="58" fill="#F8FAFC" font-weight="600">Wheat · Field 1</text>
+    <text x="240" y="58" fill="#F8FAFC">420 MUND <tspan fill="#64748B">(16,800 KG)</tspan></text>
+    <text x="360" y="58" fill="#CBD5E1">Haji Tariq Traders</text>
+    <text x="490" y="58" fill="#F8FAFC" font-weight="600">PKR 1,680,000</text>
+    <rect x="620" y="44" width="70" height="20" rx="10" fill="#064E3B"/><text x="655" y="58" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">CLEARED</text>
+
+    <line x1="0" y1="76" x2="752" y2="76" stroke="#334155" stroke-width="1"/>
+    <text x="14" y="98" fill="#94A3B8" font-family="monospace">#HRV-2026-02</text>
+    <text x="110" y="98" fill="#F8FAFC" font-weight="600">Wheat · Field 2</text>
+    <text x="240" y="98" fill="#F8FAFC">430 MUND <tspan fill="#64748B">(17,200 KG)</tspan></text>
+    <text x="360" y="98" fill="#CBD5E1">Sindh Grain House</text>
+    <text x="490" y="98" fill="#F8FAFC" font-weight="600">PKR 1,720,000</text>
+    <rect x="620" y="84" width="70" height="20" rx="10" fill="#451A03"/><text x="655" y="98" text-anchor="middle" fill="#FBBF24" font-size="10" font-weight="600">PARTIAL</text>
+  </g>
+
+  </g>
+</svg>
