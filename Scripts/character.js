@@ -14,6 +14,7 @@
     { t: 'Let’s build something 🚀', href: '#contact' },
     { t: 'Psst… see my case studies 👇', href: '#products' },
     { t: 'Curious about SabKi Sawari? 🚐', href: 'work/sabki-sawari/' },
+    { t: 'Explore ZarLogic (AgriTech ERP) 🌾', href: 'work/zarlogic/' },
     { t: 'Try my churn demo 🔮', href: 'https://telcochurnprediction-rphdf9uthz5k9pwdtai8y8.streamlit.app/', ext: true }
   ];
   var SHOW = 5000, GAP = 5000;            // each message shows 5 s, then the bubble rests 5 s
