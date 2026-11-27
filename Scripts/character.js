@@ -14,6 +14,7 @@
     { t: 'Let’s build something 🚀', href: '#contact' },
     { t: 'Psst… see my case studies 👇', href: '#products' },
     { t: 'Curious about SabKi Sawari? 🚐', href: 'work/sabki-sawari/' },
+    { t: 'Read the FeedKhata case study 📊', href: 'work/feed-khata/' },
     { t: 'Explore ZarLogic (AgriTech ERP) 🌾', href: 'work/zarlogic/' },
     { t: 'Try my churn demo 🔮', href: 'https://telcochurnprediction-rphdf9uthz5k9pwdtai8y8.streamlit.app/', ext: true }
   ];

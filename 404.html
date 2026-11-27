@@ -5,11 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found · Fakhurddin J.</title>
   <meta name="robots" content="noindex" />
-  <link rel="icon" href="/Portfolio_Website/favicon.ico?v=20261127d" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/Portfolio_Website/Images/icons/favicon-32.png?v=20261127d">
+  <link rel="icon" data-rel="/favicon.ico?v=20261127d" href="/Portfolio_Website/favicon.ico?v=20261127d" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" data-rel="/Images/icons/favicon-32.png?v=20261127d" href="/Portfolio_Website/Images/icons/favicon-32.png?v=20261127d">
   <meta name="theme-color" content="#1C1917">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet" />
-  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
+  <script>
+    (function () {
+      var b = location.pathname.indexOf('/Portfolio_Website') === 0 ? '/Portfolio_Website' : '';
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[data-rel]').forEach(function (el) {
+          el.href = b + el.getAttribute('data-rel');
+        });
+        document.querySelectorAll('link[data-rel]').forEach(function (el) {
+          el.href = b + el.getAttribute('data-rel');
+        });
+      });
+    })();
+  </script>
   <style>
     :root { --bg: #1C1917; --surface: #26201D; --text: #EDE8E3; --muted: #9C8E87; --accent: #60A5FA; --border: #3C3330; }
     [data-theme="light"] { --bg: #F8F5F2; --surface: #FFFFFF; --text: #1C1917; --muted: #6B5E57; --accent: #2563EB; --border: #E2DDD8; }
@@ -33,10 +46,10 @@
     <h1>This page doesn&rsquo;t exist</h1>
     <p>The link may be old or mistyped. Here is where you can go instead.</p>
     <nav>
-      <a class="primary" href="/Portfolio_Website/">Go to the portfolio</a>
-      <a href="/Portfolio_Website/work/feed-khata/">FeedKhata case study</a>
-      <a href="/Portfolio_Website/work/sabki-sawari/">SabKi Sawari case study</a>
-      <a href="/Portfolio_Website/work/zarlogic/">ZarLogic case study</a>
+      <a class="primary" data-rel="/" href="/Portfolio_Website/">Go to the portfolio</a>
+      <a data-rel="/work/feed-khata/" href="/Portfolio_Website/work/feed-khata/">FeedKhata case study</a>
+      <a data-rel="/work/sabki-sawari/" href="/Portfolio_Website/work/sabki-sawari/">SabKi Sawari case study</a>
+      <a data-rel="/work/zarlogic/" href="/Portfolio_Website/work/zarlogic/">ZarLogic case study</a>
     </nav>
   </main>
 </body>
